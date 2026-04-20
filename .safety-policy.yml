@@ -1,0 +1,51 @@
+# Safety policy configuration
+# https://docs.safetycli.com/safety-docs/configuration-file
+
+security:
+  # Ignore specific vulnerabilities (use with caution)
+  ignore-vulnerabilities:
+    # Example: ignore a specific CVE if it doesn't apply to our use case
+    # - "12345"  # CVE-YYYY-XXXXX - Reason for ignoring
+    
+  # Continue on vulnerability errors
+  continue-on-vulnerability-error: false
+  
+  # Audit and monitor settings
+  audit-and-monitor:
+    # Enable audit and monitor features
+    enabled: true
+    
+  # Alert settings
+  alert:
+    # Severity levels to alert on
+    severity-threshold: "medium"
+    
+  # Report settings
+  report:
+    # Include license information
+    include-license: true
+    
+    # Output format
+    format: "json"
+    
+    # Include CVE information
+    include-cve: true
+
+# Package ignore patterns
+ignore-packages:
+  # Ignore development dependencies for production scans
+  # - "pytest*"
+  # - "black*"
+  
+# File patterns to scan
+scan:
+  # Include these file patterns
+  include:
+    - "requirements*.txt"
+    - "setup.py"
+    - "pyproject.toml"
+    
+  # Exclude these file patterns  
+  exclude:
+    - "test-requirements.txt"
+    - "dev-requirements.txt"

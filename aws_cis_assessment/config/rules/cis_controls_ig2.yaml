@@ -1,0 +1,1091 @@
+implementation_group: IG2
+total_rules: 82
+description: Enhanced security for enterprises with regulatory compliance burdens
+controls:
+  '11.4':
+    title: Establish and Maintain an Isolated Instance of Recovery Data
+    weight: 1.0
+    config_rules:
+    - name: elb-deletion-protection-enabled
+      resource_types:
+      - AWS::ElasticLoadBalancingV2::LoadBalancer
+      parameters: {}
+      description: Assessment for elb-deletion-protection-enabled AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for elb-deletion-protection-enabled
+    - name: rds-instance-deletion-protection-enabled
+      resource_types:
+      - AWS::RDS::DBInstance
+      parameters: {}
+      description: Assessment for rds-instance-deletion-protection-enabled AWS Config
+        rule.
+      remediation_guidance: Follow AWS Config rule guidance for rds-instance-deletion-protection-enabled
+  '12.2':
+    title: Establish and Maintain a Secure Network Architecture
+    weight: 1.0
+    config_rules:
+    - name: elb-cross-zone-load-balancing-enabled
+      resource_types:
+      - AWS::ElasticLoadBalancing::LoadBalancer
+      parameters: {}
+      description: Assessment for elb-cross-zone-load-balancing-enabled AWS Config
+        rule.
+      remediation_guidance: Follow AWS Config rule guidance for elb-cross-zone-load-balancing-enabled
+    - name: elbv2-multiple-az
+      resource_types:
+      - AWS::ElasticLoadBalancingV2::LoadBalancer
+      parameters: {}
+      description: Assessment for elbv2-multiple-az AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for elbv2-multiple-az
+    - name: rds-cluster-multi-az-enabled
+      resource_types:
+      - AWS::RDS::DBCluster
+      parameters: {}
+      description: Assessment for rds-cluster-multi-az-enabled AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for rds-cluster-multi-az-enabled
+    - name: rds-multi-az-support
+      resource_types:
+      - AWS::RDS::DBInstance
+      parameters: {}
+      description: Assessment for rds-multi-az-support AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for rds-multi-az-support
+    - name: vpc-vpn-2-tunnels-up
+      resource_types:
+      - AWS::EC2::VPNConnection
+      parameters: {}
+      description: Assessment for vpc-vpn-2-tunnels-up AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for vpc-vpn-2-tunnels-up
+    - name: dynamodb-autoscaling-enabled
+      resource_types:
+      - AWS::DynamoDB::Table
+      parameters: {}
+      description: Assessment for dynamodb-autoscaling-enabled AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for dynamodb-autoscaling-enabled
+  '3.10':
+    title: Encrypt Sensitive Data in Transit
+    weight: 1.0
+    config_rules:
+    - name: api-gw-ssl-enabled
+      resource_types:
+      - AWS::ApiGateway::Stage
+      parameters: {}
+      description: Assessment for api-gw-ssl-enabled Config rule - ensures API Gateway
+        stages have SSL certificates.
+      remediation_guidance: Follow AWS Config rule guidance for api-gw-ssl-enabled
+    - name: alb-http-to-https-redirection-check
+      resource_types:
+      - AWS::ElasticLoadBalancingV2::LoadBalancer
+      parameters: {}
+      description: Assessment for alb-http-to-https-redirection-check Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for alb-http-to-https-redirection-check
+    - name: elb-tls-https-listeners-only
+      resource_types:
+      - AWS::ElasticLoadBalancing::LoadBalancer
+      parameters: {}
+      description: Assessment for elb-tls-https-listeners-only Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for elb-tls-https-listeners-only
+    - name: s3-bucket-ssl-requests-only
+      resource_types:
+      - AWS::S3::Bucket
+      parameters: {}
+      description: Assessment for s3-bucket-ssl-requests-only Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for s3-bucket-ssl-requests-only
+    - name: redshift-require-tls-ssl
+      resource_types:
+      - AWS::Redshift::Cluster
+      parameters: {}
+      description: Assessment for redshift-require-tls-ssl Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for redshift-require-tls-ssl
+    - name: elb-acm-certificate-required
+      resource_types:
+      - AWS::ElasticLoadBalancing::LoadBalancer
+      parameters: {}
+      description: Assessment for elb-acm-certificate-required Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for elb-acm-certificate-required
+    - name: elbv2-acm-certificate-required
+      resource_types:
+      - AWS::ElasticLoadBalancingV2::LoadBalancer
+      parameters: {}
+      description: Assessment for elbv2-acm-certificate-required Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for elbv2-acm-certificate-required
+    - name: opensearch-https-required
+      resource_types:
+      - AWS::OpenSearch::Domain
+      parameters: {}
+      description: Assessment for opensearch-https-required Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for opensearch-https-required
+    - name: opensearch-node-to-node-encryption-check
+      resource_types:
+      - AWS::OpenSearch::Domain
+      parameters: {}
+      description: Assessment for opensearch-node-to-node-encryption-check AWS Config
+        rule.
+      remediation_guidance: Follow AWS Config rule guidance for opensearch-node-to-node-encryption-check
+  '3.11':
+    title: Encrypt Sensitive Data at Rest
+    weight: 1.0
+    config_rules:
+    - name: secretsmanager-using-cmk
+      resource_types:
+      - AWS::SecretsManager::Secret
+      parameters: {}
+      description: Assessment for secretsmanager-using-cmk AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for secretsmanager-using-cmk
+    - name: sns-encrypted-kms
+      resource_types:
+      - AWS::SNS::Topic
+      parameters: {}
+      description: Assessment for sns-encrypted-kms AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for sns-encrypted-kms
+    - name: sqs-queue-encrypted-kms
+      resource_types:
+      - AWS::SQS::Queue
+      parameters: {}
+      description: Assessment for sqs-queue-encrypted-kms AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for sqs-queue-encrypted-kms
+    - name: kinesis-stream-encrypted
+      resource_types:
+      - AWS::Kinesis::Stream
+      parameters: {}
+      description: Assessment for kinesis-stream-encrypted AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for kinesis-stream-encrypted
+    - name: elasticsearch-encrypted-at-rest
+      resource_types:
+      - AWS::Elasticsearch::Domain
+      parameters: {}
+      description: Assessment for elasticsearch-encrypted-at-rest AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for elasticsearch-encrypted-at-rest
+    - name: encrypted-volumes
+      resource_types:
+      - AWS::EC2::Volume
+      parameters: {}
+      description: Assessment for encrypted-volumes Config rule - ensures EBS volumes
+        are encrypted.
+      remediation_guidance: Follow AWS Config rule guidance for encrypted-volumes
+    - name: rds-storage-encrypted
+      resource_types:
+      - AWS::RDS::DBInstance
+      parameters: {}
+      description: Assessment for rds-storage-encrypted Config rule - ensures RDS
+        instances have storage encryption.
+      remediation_guidance: Follow AWS Config rule guidance for rds-storage-encrypted
+    - name: s3-default-encryption-kms
+      resource_types:
+      - AWS::S3::Bucket
+      parameters: {}
+      description: Assessment for s3-default-encryption-kms Config rule - ensures
+        S3 buckets have default KMS encryption.
+      remediation_guidance: Follow AWS Config rule guidance for s3-default-encryption-kms
+    - name: dynamodb-table-encrypted-kms
+      resource_types:
+      - AWS::DynamoDB::Table
+      parameters: {}
+      description: Assessment for dynamodb-table-encrypted-kms Config rule - ensures
+        DynamoDB tables are encrypted with KMS.
+      remediation_guidance: Follow AWS Config rule guidance for dynamodb-table-encrypted-kms
+    - name: backup-recovery-point-encrypted
+      resource_types:
+      - AWS::Backup::RecoveryPoint
+      parameters: {}
+      description: Assessment for backup-recovery-point-encrypted Config rule - ensures
+        AWS Backup recovery points are encrypted.
+      remediation_guidance: Follow AWS Config rule guidance for backup-recovery-point-encrypted
+    - name: efs-encrypted-check
+      resource_types:
+      - AWS::EFS::FileSystem
+      parameters: {}
+      description: Assessment for efs-encrypted-check Config rule - ensures EFS file
+        systems are encrypted.
+      remediation_guidance: Follow AWS Config rule guidance for efs-encrypted-check
+    - name: secretsmanager-using-cmk
+      resource_types:
+      - AWS::SecretsManager::Secret
+      parameters: {}
+      description: Assessment for secretsmanager-using-cmk Config rule - ensures Secrets
+        Manager secrets use KMS keys.
+      remediation_guidance: Follow AWS Config rule guidance for secretsmanager-using-cmk
+    - name: sns-encrypted-kms
+      resource_types:
+      - AWS::SNS::Topic
+      parameters: {}
+      description: Assessment for sns-encrypted-kms Config rule - ensures SNS topics
+        are encrypted with KMS.
+      remediation_guidance: Follow AWS Config rule guidance for sns-encrypted-kms
+    - name: sqs-queue-encrypted-kms
+      resource_types:
+      - AWS::SQS::Queue
+      parameters: {}
+      description: Assessment for sqs-queue-encrypted-kms Config rule - ensures SQS
+        queues are encrypted with KMS.
+      remediation_guidance: Follow AWS Config rule guidance for sqs-queue-encrypted-kms
+    - name: cloudwatch-log-group-encrypted
+      resource_types:
+      - AWS::Logs::LogGroup
+      parameters: {}
+      description: Assessment for cloudwatch-log-group-encrypted Config rule - ensures
+        CloudWatch log groups are encrypted.
+      remediation_guidance: Follow AWS Config rule guidance for cloudwatch-log-group-encrypted
+    - name: kinesis-stream-encrypted
+      resource_types:
+      - AWS::Kinesis::Stream
+      parameters: {}
+      description: Assessment for kinesis-stream-encrypted Config rule - ensures Kinesis
+        streams are encrypted.
+      remediation_guidance: Follow AWS Config rule guidance for kinesis-stream-encrypted
+    - name: elasticsearch-encrypted-at-rest
+      resource_types:
+      - AWS::Elasticsearch::Domain
+      parameters: {}
+      description: Assessment for elasticsearch-encrypted-at-rest Config rule - ensures
+        Elasticsearch domains are encrypted at rest.
+      remediation_guidance: Follow AWS Config rule guidance for elasticsearch-encrypted-at-rest
+    - name: cloud-trail-encryption-enabled
+      resource_types:
+      - AWS::CloudTrail::Trail
+      parameters: {}
+      description: Assessment for cloud-trail-encryption-enabled Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for cloud-trail-encryption-enabled
+    - name: efs-encrypted-check
+      resource_types:
+      - AWS::EFS::FileSystem
+      parameters: {}
+      description: Assessment for efs-encrypted-check Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for efs-encrypted-check
+    - name: ec2-ebs-encryption-by-default
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: Assessment for ec2-ebs-encryption-by-default Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for ec2-ebs-encryption-by-default
+    - name: rds-snapshot-encrypted
+      resource_types:
+      - AWS::RDS::DBSnapshot
+      - AWS::RDS::DBClusterSnapshot
+      parameters: {}
+      description: Assessment for rds-snapshot-encrypted Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for rds-snapshot-encrypted
+    - name: opensearch-encrypted-at-rest
+      resource_types:
+      - AWS::OpenSearch::Domain
+      parameters: {}
+      description: Assessment for opensearch-encrypted-at-rest AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for opensearch-encrypted-at-rest
+    - name: redshift-cluster-kms-enabled
+      resource_types:
+      - AWS::Redshift::Cluster
+      parameters: {}
+      description: Assessment for redshift-cluster-kms-enabled AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for redshift-cluster-kms-enabled
+    - name: sagemaker-endpoint-configuration-kms-key-configured
+      resource_types:
+      - AWS::SageMaker::EndpointConfig
+      parameters: {}
+      description: Assessment for sagemaker-endpoint-configuration-kms-key-configured
+        AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for sagemaker-endpoint-configuration-kms-key-configured
+    - name: sagemaker-notebook-instance-kms-key-configured
+      resource_types:
+      - AWS::SageMaker::NotebookInstance
+      parameters: {}
+      description: Assessment for sagemaker-notebook-instance-kms-key-configured AWS
+        Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for sagemaker-notebook-instance-kms-key-configured
+    - name: codebuild-project-artifact-encryption
+      resource_types:
+      - AWS::CodeBuild::Project
+      parameters: {}
+      description: Assessment for codebuild-project-artifact-encryption AWS Config
+        rule.
+      remediation_guidance: Follow AWS Config rule guidance for codebuild-project-artifact-encryption
+  '3.3':
+    title: Configure Data Access Control Lists
+    weight: 1.0
+    config_rules:
+    - name: redshift-enhanced-vpc-routing-enabled
+      resource_types:
+      - AWS::Redshift::Cluster
+      parameters: {}
+      description: Assessment for redshift-enhanced-vpc-routing-enabled AWS Config
+        rule.
+      remediation_guidance: Follow AWS Config rule guidance for redshift-enhanced-vpc-routing-enabled
+    - name: restricted-common-ports
+      resource_types:
+      - AWS::EC2::SecurityGroup
+      parameters: {}
+      description: Assessment for restricted-common-ports AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for restricted-common-ports
+    - name: codebuild-project-environment-privileged-check
+      resource_types:
+      - AWS::CodeBuild::Project
+      parameters: {}
+      description: Assessment for codebuild-project-environment-privileged-check AWS
+        Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for codebuild-project-environment-privileged-check
+    - name: codebuild-project-envvar-awscred-check
+      resource_types:
+      - AWS::CodeBuild::Project
+      parameters: {}
+      description: Assessment for codebuild-project-envvar-awscred-check AWS Config
+        rule.
+      remediation_guidance: Follow AWS Config rule guidance for codebuild-project-envvar-awscred-check
+    - name: codebuild-project-source-repo-url-check
+      resource_types:
+      - AWS::CodeBuild::Project
+      parameters: {}
+      description: Assessment for codebuild-project-source-repo-url-check AWS Config
+        rule.
+      remediation_guidance: Follow AWS Config rule guidance for codebuild-project-source-repo-url-check
+  '4.1':
+    title: Establish and Maintain a Secure Configuration Process
+    weight: 1.0
+    config_rules:
+    - name: acm-certificate-expiration-check
+      resource_types:
+      - AWS::ACM::Certificate
+      parameters: {}
+      description: Assessment for acm-certificate-expiration-check AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for acm-certificate-expiration-check
+    - name: iam-max-session-duration-check
+      resource_types:
+      - AWS::IAM::Role
+      parameters: {}
+      description: Validates that IAM role session duration does not exceed 12 hours to limit the window of exposure for compromised credentials.
+      remediation_guidance: |
+        Update IAM role to limit session duration to 12 hours or less:
+        1. Go to IAM console > Roles
+        2. Select the role
+        3. Edit Maximum session duration
+        4. Set to 12 hours (43200 seconds) or less
+        5. Save changes
+        
+        AWS CLI example:
+        aws iam update-role --role-name <role-name> --max-session-duration 43200
+      control_id: '4.1'
+      ig_level: IG2
+    - name: security-group-default-rules-check
+      resource_types:
+      - AWS::EC2::SecurityGroup
+      parameters: {}
+      description: Ensures default security groups have no inbound or outbound rules to prevent unintended network access.
+      remediation_guidance: |
+        Remove all rules from default security group:
+        1. Go to EC2 console > Security Groups
+        2. Select the default security group
+        3. Remove all inbound rules
+        4. Remove all outbound rules
+        5. Create custom security groups for actual use
+        
+        AWS CLI example:
+        aws ec2 revoke-security-group-ingress --group-id <sg-id> --ip-permissions <permissions>
+        aws ec2 revoke-security-group-egress --group-id <sg-id> --ip-permissions <permissions>
+        
+        Note: Default security groups cannot be deleted, only restricted.
+      control_id: '4.2'
+      ig_level: IG2
+    - name: vpc-dns-resolution-enabled
+      resource_types:
+      - AWS::EC2::VPC
+      parameters: {}
+      description: Validates VPC DNS configuration (enableDnsHostnames and enableDnsSupport) to ensure proper name resolution within the VPC.
+      remediation_guidance: |
+        Enable DNS resolution for VPC:
+        1. Go to VPC console
+        2. Select the VPC
+        3. Actions > Edit DNS resolution
+        4. Enable DNS resolution (enableDnsSupport)
+        5. Actions > Edit DNS hostnames
+        6. Enable DNS hostnames (enableDnsHostnames)
+        
+        AWS CLI example:
+        aws ec2 modify-vpc-attribute --vpc-id <vpc-id> --enable-dns-support
+        aws ec2 modify-vpc-attribute --vpc-id <vpc-id> --enable-dns-hostnames
+      control_id: '4.3'
+      ig_level: IG2
+    - name: rds-default-admin-check
+      resource_types:
+      - AWS::RDS::DBInstance
+      parameters: {}
+      description: Ensures RDS instances don't use default admin usernames (postgres, admin, root, mysql, administrator, sa) to reduce predictability for attackers.
+      remediation_guidance: |
+        RDS master username cannot be changed after creation. Remediation requires:
+        1. Create a snapshot of the existing RDS instance
+        2. Restore snapshot to a new instance with a custom master username
+        3. Update application connection strings
+        4. Test the new instance thoroughly
+        5. Delete the old instance after verification
+        
+        AWS CLI example:
+        aws rds create-db-snapshot --db-instance-identifier <old-instance> --db-snapshot-identifier <snapshot-name>
+        aws rds restore-db-instance-from-db-snapshot --db-instance-identifier <new-instance> --db-snapshot-identifier <snapshot-name> --master-username <custom-username>
+        
+        Note: This is a disruptive change requiring downtime. Plan accordingly.
+      control_id: '4.4'
+      ig_level: IG2
+    - name: ec2-instance-profile-least-privilege
+      resource_types:
+      - AWS::EC2::Instance
+      parameters: {}
+      description: Validates EC2 instance profile permissions follow least privilege principles by checking for overly permissive policies.
+      remediation_guidance: |
+        Apply least privilege to instance profile:
+        1. Review the instance profile's IAM role policies
+        2. Identify overly broad permissions (wildcards, full access)
+        3. Create new policies with specific actions and resources
+        4. Replace broad policies with specific policies
+        5. Test application functionality
+        6. Remove overly permissive policies
+        
+        AWS CLI example:
+        aws iam create-policy --policy-name <specific-policy> --policy-document file://policy.json
+        aws iam attach-role-policy --role-name <role-name> --policy-arn <specific-policy-arn>
+        aws iam detach-role-policy --role-name <role-name> --policy-arn <broad-policy-arn>
+        
+        Best practices:
+        - Grant only the permissions required for the instance's workload
+        - Use specific actions instead of wildcards
+        - Limit resources to specific ARNs when possible
+        - Regularly review and refine permissions
+      control_id: '4.5'
+      ig_level: IG2
+  '5.1':
+    title: Establish and Maintain an Inventory of Service Accounts
+    weight: 1.0
+    config_rules:
+    - name: iam-service-account-inventory-check
+      resource_types:
+      - AWS::IAM::User
+      - AWS::IAM::Role
+      parameters: {}
+      description: Validates service accounts have required documentation tags (Purpose, Owner, LastReviewed) for proper inventory management.
+      remediation_guidance: |
+        Add required documentation tags to service accounts:
+        1. Go to IAM console > Users or Roles
+        2. Select the service account
+        3. Tags tab > Manage tags
+        4. Add required tags:
+           - Purpose: Description of what the account is used for
+           - Owner: Team or individual responsible
+           - LastReviewed: Date of last access review (YYYY-MM-DD)
+        5. Save changes
+        
+        AWS CLI example:
+        aws iam tag-user --user-name <service-account> --tags Key=Purpose,Value="API access for app" Key=Owner,Value="platform-team" Key=LastReviewed,Value="2024-01-15"
+        aws iam tag-role --role-name <service-role> --tags Key=Purpose,Value="Lambda execution" Key=Owner,Value="dev-team" Key=LastReviewed,Value="2024-01-15"
+        
+        Best practices:
+        - Review service accounts quarterly
+        - Update LastReviewed tag after each review
+        - Remove unused service accounts
+        - Document service account inventory
+      control_id: '5.1'
+      ig_level: IG2
+  '5.2':
+    title: Centralize Account Management
+    weight: 1.0
+    config_rules:
+    - name: iam-admin-policy-attached-to-role-check
+      resource_types:
+      - AWS::IAM::User
+      parameters: {}
+      description: Ensures administrative policies are attached to roles, not users, to enable temporary credential usage and better audit trails.
+      remediation_guidance: |
+        Move administrative access from users to roles:
+        1. Create an IAM role for administrative access
+        2. Attach administrative policies to the role
+        3. Configure trust policy for the role (allow users to assume)
+        4. Remove administrative policies from IAM users
+        5. Users should assume the role when admin access is needed
+        
+        AWS CLI example:
+        # Create admin role
+        aws iam create-role --role-name AdminRole --assume-role-policy-document file://trust-policy.json
+        aws iam attach-role-policy --role-name AdminRole --policy-arn arn:aws:iam::aws:policy/AdministratorAccess
+        
+        # Remove admin policy from user
+        aws iam detach-user-policy --user-name <user> --policy-arn arn:aws:iam::aws:policy/AdministratorAccess
+        
+        # User assumes role
+        aws sts assume-role --role-arn arn:aws:iam::<account>:role/AdminRole --role-session-name admin-session
+        
+        Benefits:
+        - Temporary credentials with session limits
+        - Audit trail of role assumptions
+        - Centralized permission management
+        - Easier to revoke access
+      control_id: '5.2'
+      ig_level: IG2
+    - name: sso-enabled-check
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: Validates AWS IAM Identity Center (SSO) is configured for centralized identity management and single sign-on.
+      remediation_guidance: |
+        Enable AWS IAM Identity Center (SSO):
+        1. Go to IAM Identity Center console
+        2. Enable IAM Identity Center
+        3. Choose identity source:
+           - Identity Center directory (default)
+           - Active Directory
+           - External identity provider (SAML 2.0)
+        4. Configure users and groups
+        5. Assign users to AWS accounts and permission sets
+        6. Users access AWS via SSO portal
+        
+        Benefits:
+        - Centralized user management
+        - Single sign-on experience
+        - Temporary credentials
+        - Integration with corporate identity providers
+        - Reduced IAM user sprawl
+      control_id: '5.3'
+      ig_level: IG2
+    - name: iam-user-no-inline-policies
+      resource_types:
+      - AWS::IAM::User
+      parameters: {}
+      description: Ensures IAM users don't have inline policies, promoting use of managed policies for better reusability and management.
+      remediation_guidance: |
+        Replace inline policies with managed policies or group memberships:
+        1. Review inline policy document
+        2. Create equivalent managed policy or identify existing managed policy
+        3. Attach managed policy to user or add user to appropriate group
+        4. Test that user still has required permissions
+        5. Delete inline policy
+        
+        AWS CLI example:
+        # Get inline policy document
+        aws iam get-user-policy --user-name <user> --policy-name <inline-policy> > policy.json
+        
+        # Create managed policy from document
+        aws iam create-policy --policy-name <policy-name> --policy-document file://policy.json
+        
+        # Attach managed policy to user
+        aws iam attach-user-policy --user-name <user> --policy-arn <policy-arn>
+        
+        # Delete inline policy
+        aws iam delete-user-policy --user-name <user> --policy-name <inline-policy>
+        
+        Best practices:
+        - Use managed policies for reusability
+        - Use groups for common permission sets
+        - Avoid user-specific permissions when possible
+        - Managed policies are easier to audit and update
+      control_id: '5.4'
+      ig_level: IG2
+  '6.1':
+    title: Establish an Access Granting Process
+    weight: 1.0
+    config_rules:
+    - name: iam-access-analyzer-enabled
+      resource_types:
+      - AWS::AccessAnalyzer::Analyzer
+      parameters: {}
+      description: Ensures IAM Access Analyzer is enabled in all active regions to identify resources shared with external entities.
+      remediation_guidance: |
+        Enable IAM Access Analyzer in each region:
+        1. Go to IAM console > Access Analyzer
+        2. Create analyzer for each active region
+        3. Choose analyzer type:
+           - Account analyzer: Analyzes resources in the account
+           - Organization analyzer: Analyzes resources across organization
+        4. Review findings regularly
+        
+        AWS CLI example:
+        aws accessanalyzer create-analyzer --analyzer-name account-analyzer --type ACCOUNT --region <region>
+        
+        # Create in all regions
+        for region in $(aws ec2 describe-regions --query 'Regions[].RegionName' --output text); do
+          aws accessanalyzer create-analyzer --analyzer-name account-analyzer --type ACCOUNT --region $region
+        done
+        
+        Benefits:
+        - Identifies resources shared with external entities
+        - Detects unintended access
+        - Continuous monitoring
+        - Compliance validation
+      control_id: '6.1'
+      ig_level: IG2
+    - name: iam-permission-boundaries-check
+      resource_types:
+      - AWS::IAM::Role
+      parameters: {}
+      description: Validates permission boundaries for roles with elevated privileges to prevent privilege escalation.
+      remediation_guidance: |
+        Configure permission boundaries for delegated administration:
+        1. Create a permission boundary policy that defines maximum permissions
+        2. Attach permission boundary to roles with elevated privileges
+        3. Permission boundary limits what the role can do, even with full access policies
+        
+        AWS CLI example:
+        # Create permission boundary policy
+        aws iam create-policy --policy-name DelegatedAdminBoundary --policy-document file://boundary.json
+        
+        # Attach boundary to role
+        aws iam put-role-permissions-boundary --role-name <role> --permissions-boundary arn:aws:iam::<account>:policy/DelegatedAdminBoundary
+        
+        Example boundary policy (boundary.json):
+        {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": "*",
+              "Resource": "*"
+            },
+            {
+              "Effect": "Deny",
+              "Action": [
+                "iam:DeleteRole",
+                "iam:DeleteRolePermissionsBoundary",
+                "organizations:LeaveOrganization"
+              ],
+              "Resource": "*"
+            }
+          ]
+        }
+        
+        Use cases:
+        - Delegated administration
+        - Developer self-service
+        - Prevent privilege escalation
+        - Enforce organizational policies
+      control_id: '6.2'
+      ig_level: IG2
+    - name: organizations-scp-enabled-check
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: Ensures Service Control Policies are enabled and in use to enforce organizational policies across AWS accounts.
+      remediation_guidance: |
+        Enable and configure Service Control Policies:
+        1. Ensure account is part of AWS Organizations
+        2. Enable all features in Organizations (includes SCPs)
+        3. Create custom SCPs to enforce organizational policies
+        4. Attach SCPs to OUs or accounts
+        
+        AWS CLI example:
+        # Enable all features (if using consolidated billing only)
+        aws organizations enable-all-features
+        
+        # Create custom SCP
+        aws organizations create-policy --name DenyRootUser --type SERVICE_CONTROL_POLICY --content file://scp.json
+        
+        # Attach SCP to OU
+        aws organizations attach-policy --policy-id <policy-id> --target-id <ou-id>
+        
+        Example SCP (scp.json) - Deny root user actions:
+        {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Deny",
+              "Action": "*",
+              "Resource": "*",
+              "Condition": {
+                "StringLike": {
+                  "aws:PrincipalArn": "arn:aws:iam::*:root"
+                }
+              }
+            }
+          ]
+        }
+        
+        Common SCP use cases:
+        - Deny access to specific regions
+        - Deny root user actions
+        - Require MFA for sensitive operations
+        - Prevent disabling security services
+        - Enforce tagging requirements
+      control_id: '6.3'
+      ig_level: IG2
+    - name: cognito-user-pool-mfa-enabled
+      resource_types:
+      - AWS::Cognito::UserPool
+      parameters: {}
+      description: Validates Cognito user pools have MFA enabled to provide additional authentication security.
+      remediation_guidance: |
+        Enable MFA for Cognito user pools:
+        1. Go to Cognito console > User pools
+        2. Select the user pool
+        3. Sign-in experience tab > Multi-factor authentication
+        4. Configure MFA:
+           - Required: All users must use MFA
+           - Optional: Users can choose to enable MFA
+        5. Choose MFA methods:
+           - SMS text message
+           - Time-based one-time password (TOTP)
+           - Both
+        6. Save changes
+        
+        AWS CLI example:
+        aws cognito-idp set-user-pool-mfa-config \
+          --user-pool-id <pool-id> \
+          --mfa-configuration ON \
+          --software-token-mfa-configuration Enabled=true \
+          --sms-mfa-configuration SmsConfiguration={SnsCallerArn=<sns-role-arn>}
+        
+        Best practices:
+        - Use 'Required' for sensitive applications
+        - Support both SMS and TOTP for flexibility
+        - Configure SMS role with appropriate permissions
+        - Test MFA flow before enforcing
+      control_id: '6.4'
+      ig_level: IG2
+    - name: vpn-connection-mfa-enabled
+      resource_types:
+      - AWS::EC2::ClientVpnEndpoint
+      parameters: {}
+      description: Ensures Client VPN endpoints require MFA authentication to secure remote access.
+      remediation_guidance: |
+        Enable MFA for Client VPN endpoints:
+        
+        For Active Directory authentication:
+        1. Go to VPC console > Client VPN Endpoints
+        2. Select the endpoint
+        3. Modify authentication
+        4. Enable MFA in Active Directory configuration
+        5. Apply changes
+        
+        For SAML-based authentication:
+        1. Configure MFA in your identity provider (IdP)
+        2. Update SAML assertion to include MFA claim
+        3. Client VPN will enforce MFA through IdP
+        
+        AWS CLI example:
+        # Create Client VPN endpoint with AD authentication and MFA
+        aws ec2 create-client-vpn-endpoint \
+          --client-cidr-block 10.0.0.0/16 \
+          --server-certificate-arn <cert-arn> \
+          --authentication-options Type=directory-service-authentication,ActiveDirectory={DirectoryId=<dir-id>} \
+          --connection-log-options Enabled=true,CloudwatchLogGroup=<log-group>
+        
+        Note: MFA enforcement depends on the authentication method:
+        - Active Directory: Configure MFA in AD
+        - SAML: Configure MFA in IdP
+        - Mutual authentication: Use certificate + additional factor
+        
+        Best practices:
+        - Always require MFA for VPN access
+        - Use strong MFA methods (TOTP, hardware tokens)
+        - Monitor VPN connection logs
+        - Regularly review VPN access
+      control_id: '6.5'
+      ig_level: IG2
+  '11.3':
+    title: Establish and Maintain Data Recovery Process - Advanced
+    weight: 1.0
+    config_rules:
+    - name: backup-vault-lock-check
+      resource_types:
+      - AWS::Backup::BackupVault
+      parameters: {}
+      description: Validates that AWS Backup vaults have Vault Lock enabled to prevent deletion of recovery points providing ransomware protection
+      remediation_guidance: |
+        Enable Vault Lock for critical backup vaults:
+        - Vault Lock provides immutable backups (WORM - Write Once Read Many)
+        - Protects against accidental or malicious deletion
+        - Compliance mode prevents even root user from deleting backups
+        
+        To enable Vault Lock:
+        1. Go to AWS Backup console
+        2. Select your backup vault
+        3. Configure Vault Lock:
+           - Set minimum retention period
+           - Set maximum retention period (optional)
+           - Choose compliance mode for strictest protection
+        4. Test the configuration before finalizing
+        
+        AWS CLI example:
+        aws backup put-backup-vault-lock-configuration \
+          --backup-vault-name MyVault \
+          --min-retention-days 35 \
+          --max-retention-days 365
+    - name: backup-report-plan-exists-check
+      resource_types:
+      - AWS::Backup::ReportPlan
+      parameters: {}
+      description: Validates that AWS Backup has report plans configured to monitor backup compliance and provide audit trails
+      remediation_guidance: |
+        Configure backup report plans for compliance monitoring:
+        - At least one report plan should exist
+        - Reports should cover backup job status and compliance
+        - Report delivery should be configured to S3
+        - Reports provide audit trails for compliance
+        
+        To create a report plan:
+        1. Go to AWS Backup console
+        2. Navigate to Reports section
+        3. Create report plan:
+           - Choose report template (backup job report, compliance report, etc.)
+           - Configure S3 bucket for delivery
+           - Set report frequency
+        4. Review generated reports regularly
+        
+        AWS CLI example:
+        aws backup create-report-plan \
+          --report-plan-name ComplianceReport \
+          --report-delivery-channel S3BucketName=my-backup-reports \
+          --report-setting ReportTemplate=BACKUP_JOB_REPORT
+    - name: backup-restore-testing-plan-exists-check
+      resource_types:
+      - AWS::Backup::RestoreTestingPlan
+      parameters: {}
+      description: Validates that AWS Backup has restore testing plans configured to ensure backups are actually recoverable and meet RTO/RPO requirements
+      remediation_guidance: |
+        Configure restore testing plans to validate backup recoverability:
+        - At least one restore testing plan should exist
+        - Testing plans should be actively running
+        - Critical backup vaults should be included in testing
+        - Testing frequency should be appropriate (weekly/monthly)
+        
+        To create a restore testing plan:
+        1. Go to AWS Backup console
+        2. Navigate to Restore testing section
+        3. Create restore testing plan:
+           - Select backup vaults to test
+           - Configure testing schedule
+           - Define validation rules
+           - Set up notifications for test results
+        4. Monitor test execution and results
+        
+        AWS CLI example:
+        aws backup create-restore-testing-plan \
+          --restore-testing-plan-name WeeklyRestoreTest \
+          --schedule-expression "cron(0 2 ? * SUN *)" \
+          --start-window-hours 2
+  '5.5':
+    title: Use Unique Passwords
+    weight: 1.0
+    config_rules:
+    - name: mfa-enabled-for-iam-console-access
+      resource_types:
+      - AWS::IAM::User
+      parameters: {}
+      description: Assessment for mfa-enabled-for-iam-console-access Config rule -
+        ensures MFA for console access.
+      remediation_guidance: Follow AWS Config rule guidance for mfa-enabled-for-iam-console-access
+    - name: root-account-mfa-enabled
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: Assessment for root-account-mfa-enabled Config rule - ensures root
+        account has MFA.
+      remediation_guidance: Follow AWS Config rule guidance for root-account-mfa-enabled
+    - name: iam-user-unused-credentials-check
+      resource_types:
+      - AWS::IAM::User
+      parameters: {}
+      description: Assessment for iam-user-unused-credentials-check Config rule -
+        identifies unused credentials.
+      remediation_guidance: Follow AWS Config rule guidance for iam-user-unused-credentials-check
+  '8.2':
+    title: Collect Audit Logs
+    weight: 1.0
+    config_rules:
+    - name: elasticsearch-logs-to-cloudwatch
+      resource_types:
+      - AWS::Elasticsearch::Domain
+      parameters: {}
+      description: Assessment for elasticsearch-logs-to-cloudwatch AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for elasticsearch-logs-to-cloudwatch
+    - name: elb-logging-enabled
+      resource_types:
+      - AWS::ElasticLoadBalancing::LoadBalancer
+      parameters: {}
+      description: Assessment for elb-logging-enabled AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for elb-logging-enabled
+    - name: rds-logging-enabled
+      resource_types:
+      - AWS::RDS::DBInstance
+      parameters: {}
+      description: Assessment for rds-logging-enabled AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for rds-logging-enabled
+    - name: wafv2-logging-enabled
+      resource_types:
+      - AWS::WAFv2::WebACL
+      parameters: {}
+      description: Assessment for wafv2-logging-enabled AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for wafv2-logging-enabled
+    - name: codebuild-project-logging-enabled
+      resource_types:
+      - AWS::CodeBuild::Project
+      parameters: {}
+      description: Assessment for codebuild-project-logging-enabled AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for codebuild-project-logging-enabled
+    - name: redshift-cluster-configuration-check
+      resource_types:
+      - AWS::Redshift::Cluster
+      parameters: {}
+      description: Assessment for redshift-cluster-configuration-check AWS Config
+        rule.
+      remediation_guidance: Follow AWS Config rule guidance for redshift-cluster-configuration-check
+    - name: route53-query-logging-enabled
+      resource_types:
+      - AWS::Route53::HostedZone
+      parameters: {}
+      description: Validates that Route 53 hosted zones have query logging enabled
+        to track DNS queries for security investigations and compliance.
+      remediation_guidance: |
+        Enable Route 53 query logging for hosted zones:
+        1. Create a CloudWatch Logs log group to receive query logs
+        2. Go to Route 53 console and select your hosted zone
+        3. Configure query logging:
+           - Choose the CloudWatch Logs log group
+           - Grant Route 53 permissions to write to the log group
+        4. Query logs will capture DNS queries including query name, type, response code, and more
+        
+        AWS CLI example:
+        aws route53 create-query-logging-config \
+          --hosted-zone-id Z1234567890ABC \
+          --cloud-watch-logs-log-group-arn arn:aws:logs:us-east-1:123456789012:log-group:/aws/route53/example.com
+        
+        AWS Documentation: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html
+    - name: alb-access-logs-enabled
+      resource_types:
+      - AWS::ElasticLoadBalancingV2::LoadBalancer
+      parameters: {}
+      description: Ensures Application Load Balancers have access logging enabled
+        to analyze traffic patterns and investigate security incidents.
+      remediation_guidance: |
+        Enable access logging for Application Load Balancers:
+        1. Create or identify an S3 bucket to store access logs
+        2. Configure bucket policy to allow ELB service to write logs
+        3. Go to EC2 console > Load Balancers
+        4. Select your Application Load Balancer
+        5. Edit attributes and enable access logs:
+           - Enable access logs
+           - Specify S3 bucket name
+           - Optionally specify S3 prefix
+        
+        AWS CLI example:
+        aws elbv2 modify-load-balancer-attributes \
+          --load-balancer-arn arn:aws:elasticloadbalancing:region:account-id:loadbalancer/app/my-alb/1234567890abcdef \
+          --attributes Key=access_logs.s3.enabled,Value=true Key=access_logs.s3.bucket,Value=my-alb-logs
+        
+        AWS Documentation: https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html
+    - name: cloudfront-access-logs-enabled
+      resource_types:
+      - AWS::CloudFront::Distribution
+      parameters: {}
+      description: Validates that CloudFront distributions have access logging enabled
+        to track content delivery requests and detect anomalous access patterns.
+      remediation_guidance: |
+        Enable access logging for CloudFront distributions:
+        1. Create or identify an S3 bucket to store access logs
+        2. Go to CloudFront console and select your distribution
+        3. Edit distribution settings:
+           - Enable logging
+           - Specify S3 bucket for logs
+           - Optionally specify log prefix
+           - Choose whether to include cookies in logs
+        4. CloudFront will deliver logs within 24 hours of request
+        
+        AWS CLI example:
+        aws cloudfront update-distribution \
+          --id E1234567890ABC \
+          --distribution-config file://distribution-config.json
+        
+        (distribution-config.json should include Logging.Enabled=true and Logging.Bucket)
+        
+        AWS Documentation: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html
+    - name: cloudwatch-log-retention-check
+      resource_types:
+      - AWS::Logs::LogGroup
+      parameters:
+        minimumRetentionDays: 90
+      description: Ensures CloudWatch log groups have appropriate retention periods
+        so that logs are retained long enough for compliance and investigation purposes.
+      remediation_guidance: |
+        Set retention period for CloudWatch log groups:
+        1. Go to CloudWatch console > Log groups
+        2. Select the log group
+        3. Choose Actions > Edit retention setting
+        4. Set retention period to at least 90 days (or as required by your compliance needs)
+        5. Common retention periods: 90 days, 180 days, 1 year, 5 years, 10 years
+        
+        Note: Indefinite retention (Never expire) is not recommended due to storage costs
+        and compliance requirements for defined retention periods.
+        
+        AWS CLI example:
+        aws logs put-retention-policy \
+          --log-group-name /aws/lambda/my-function \
+          --retention-in-days 90
+        
+        AWS Documentation: https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html
+    - name: cloudtrail-insights-enabled
+      resource_types:
+      - AWS::CloudTrail::Trail
+      parameters: {}
+      description: Validates that CloudTrail Insights is enabled for anomaly detection
+        so that anomalous API activity can be automatically detected.
+      remediation_guidance: |
+        Enable CloudTrail Insights for anomaly detection:
+        1. Go to CloudTrail console and select your trail
+        2. Edit trail settings
+        3. Enable Insights events:
+           - Check "Enable Insights events"
+           - Insights will analyze write management events
+           - Anomalies are detected using machine learning
+        4. CloudTrail Insights will generate events when unusual activity is detected
+        5. Configure CloudWatch alarms or EventBridge rules to alert on Insights events
+        
+        AWS CLI example:
+        aws cloudtrail put-insight-selectors \
+          --trail-name my-trail \
+          --insight-selectors '[{"InsightType": "ApiCallRateInsight"}]'
+        
+        Note: CloudTrail Insights incurs additional charges beyond standard CloudTrail logging.
+        
+        AWS Documentation: https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html
+    - name: config-recording-all-resources
+      resource_types:
+      - AWS::Config::ConfigurationRecorder
+      parameters: {}
+      description: Ensures AWS Config is recording all resource types so that configuration
+        changes are tracked for compliance and security analysis.
+      remediation_guidance: |
+        Configure AWS Config to record all resource types:
+        1. Go to AWS Config console
+        2. If Config is not set up, complete the setup wizard:
+           - Choose "Record all resources supported in this region"
+           - Include global resources (IAM, etc.) in one region
+           - Create or select an S3 bucket for configuration history
+           - Create or select an SNS topic for notifications
+           - Create or select an IAM role for Config
+        3. If Config is already set up, edit the configuration recorder:
+           - Ensure "Record all resources supported in this region" is selected
+           - Ensure the recorder is turned on (recording=true)
+        
+        AWS CLI example:
+        aws configservice put-configuration-recorder \
+          --configuration-recorder name=default,roleARN=arn:aws:iam::123456789012:role/config-role \
+          --recording-group allSupported=true,includeGlobalResourceTypes=true
+        
+        aws configservice start-configuration-recorder --configuration-recorder-name default
+        
+        AWS Documentation: https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html
+    - name: waf-logging-enabled
+      resource_types:
+      - AWS::WAFv2::WebACL
+      parameters: {}
+      description: Validates that WAF web ACLs have logging enabled so that web application
+        firewall events are captured for security analysis.
+      remediation_guidance: |
+        Enable logging for WAF web ACLs:
+        1. Choose a log destination:
+           - Amazon Kinesis Data Firehose (recommended for analysis)
+           - Amazon S3 bucket
+           - CloudWatch Logs log group
+        2. For Kinesis Data Firehose:
+           - Create a Firehose delivery stream with prefix "aws-waf-logs-"
+           - Configure destination (S3, Redshift, Elasticsearch, etc.)
+        3. Go to WAF console and select your web ACL
+        4. Enable logging:
+           - Choose "Enable logging"
+           - Select your log destination
+           - Configure redacted fields if needed (to protect sensitive data)
+        
+        AWS CLI example:
+        aws wafv2 put-logging-configuration \
+          --logging-configuration ResourceArn=arn:aws:wafv2:region:account-id:regional/webacl/name/id,LogDestinationConfigs=arn:aws:firehose:region:account-id:deliverystream/aws-waf-logs-stream
+        
+        AWS Documentation: https://docs.aws.amazon.com/waf/latest/developerguide/logging.html

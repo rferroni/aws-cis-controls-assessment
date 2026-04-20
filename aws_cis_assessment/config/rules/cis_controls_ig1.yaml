@@ -1,0 +1,1046 @@
+implementation_group: IG1
+total_rules: 125
+description: Essential cyber hygiene - foundational safeguards for all enterprises
+controls:
+  '1.1':
+    title: Establish and Maintain Detailed Enterprise Asset Inventory
+    weight: 1.0
+    config_rules:
+    - name: eip-attached
+      resource_types:
+      - AWS::EC2::EIP
+      parameters: {}
+      description: Assessment for eip-attached Config rule - ensures Elastic IPs are
+        attached.
+      remediation_guidance: Follow AWS Config rule guidance for eip-attached
+    - name: ec2-stopped-instance
+      resource_types:
+      - AWS::EC2::Instance
+      parameters: {}
+      description: Assessment for ec2-stopped-instance Config rule - checks for long-stopped
+        instances.
+      remediation_guidance: Follow AWS Config rule guidance for ec2-stopped-instance
+    - name: vpc-network-acl-unused-check
+      resource_types:
+      - AWS::EC2::NetworkAcl
+      parameters: {}
+      description: Assessment for vpc-network-acl-unused-check Config rule - ensures
+        NACLs are in use.
+      remediation_guidance: Follow AWS Config rule guidance for vpc-network-acl-unused-check
+    - name: ec2-instance-managed-by-systems-manager
+      resource_types:
+      - AWS::EC2::Instance
+      parameters: {}
+      description: Assessment for ec2-instance-managed-by-systems-manager Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for ec2-instance-managed-by-systems-manager
+    - name: ec2-security-group-attached-to-eni
+      resource_types:
+      - AWS::EC2::SecurityGroup
+      parameters: {}
+      description: Assessment for ec2-security-group-attached-to-eni Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for ec2-security-group-attached-to-eni
+    - name: ssm-inventory-enabled
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: "CIS Control 1.1 - Establish and Maintain Detailed Enterprise Asset Inventory\n    AWS Config Rule: ssm-inventory-enabled\n    \n    Ensures AWS Systems Manager Inventory is enabled for comprehensive asset tracking."
+      remediation_guidance: Follow AWS Config rule guidance for ssm-inventory-enabled
+    - name: config-enabled-all-regions
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: "CIS Control 1.1 - Establish and Maintain Detailed Enterprise Asset Inventory\n    AWS Config Rule: config-enabled-all-regions\n    \n    Ensures AWS Config is enabled in all regions for complete resource tracking."
+      remediation_guidance: Follow AWS Config rule guidance for config-enabled-all-regions
+    - name: ami-inventory-tracking
+      resource_types:
+      - AWS::EC2::Image
+      parameters: {}
+      description: "CIS Control 1.1 - Establish and Maintain Detailed Enterprise Asset Inventory\n    AWS Config Rule: ami-inventory-tracking\n    \n    Ensures AMIs are properly tagged for inventory management."
+      remediation_guidance: Follow AWS Config rule guidance for ami-inventory-tracking
+    - name: lambda-runtime-inventory
+      resource_types:
+      - AWS::Lambda::Function
+      parameters: {}
+      description: "CIS Control 1.1 - Establish and Maintain Detailed Enterprise Asset Inventory\n    AWS Config Rule: lambda-runtime-inventory\n    \n    Tracks Lambda function runtimes for inventory purposes."
+      remediation_guidance: Follow AWS Config rule guidance for lambda-runtime-inventory
+    - name: iam-user-inventory-check
+      resource_types:
+      - AWS::IAM::User
+      parameters: {}
+      description: "CIS Control 1.1 - Establish and Maintain Detailed Enterprise Asset Inventory\n    AWS Config Rule: iam-user-inventory-check\n    \n    Ensures IAM users have proper inventory tags for asset management."
+      remediation_guidance: Follow AWS Config rule guidance for iam-user-inventory-check
+    - name: asset-tagging-compliance
+      resource_types:
+      - AWS::EC2::Instance
+      parameters: {}
+      description: "CIS Control 1.1 - Establish and Maintain Detailed Enterprise Asset Inventory\n    AWS Config Rule: asset-tagging-compliance\n    \n    Ensures resources have required tags for asset management."
+      remediation_guidance: Follow AWS Config rule guidance for asset-tagging-compliance
+    - name: unauthorized-asset-detection
+      resource_types:
+      - AWS::EC2::Instance
+      parameters: {}
+      description: "CIS Control 1.1 - Establish and Maintain Detailed Enterprise Asset Inventory\n    AWS Config Rule: unauthorized-asset-detection\n    \n    Detects resources without proper authorization tags."
+      remediation_guidance: Follow AWS Config rule guidance for unauthorized-asset-detection
+  '1.5':
+    title: Use a Passive Asset Discovery Tool
+    weight: 1.0
+    config_rules:
+    - name: root-account-hardware-mfa-enabled
+      resource_types:
+      - AWS::IAM::Root
+      parameters: {}
+      description: Assessment for root-account-hardware-mfa-enabled AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for root-account-hardware-mfa-enabled
+  '11.2':
+    title: Perform Automated Backups
+    weight: 1.0
+    config_rules:
+    - name: ebs-optimized-instance
+      resource_types:
+      - AWS::EC2::Instance
+      parameters: {}
+      description: Assessment for ebs-optimized-instance AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for ebs-optimized-instance
+    - name: dynamodb-in-backup-plan
+      resource_types:
+      - AWS::DynamoDB::Table
+      parameters: {}
+      description: Assessment for dynamodb-in-backup-plan AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for dynamodb-in-backup-plan
+    - name: ebs-in-backup-plan
+      resource_types:
+      - AWS::EC2::Volume
+      parameters: {}
+      description: Assessment for ebs-in-backup-plan AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for ebs-in-backup-plan
+    - name: efs-in-backup-plan
+      resource_types:
+      - AWS::EFS::FileSystem
+      parameters: {}
+      description: Assessment for efs-in-backup-plan AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for efs-in-backup-plan
+    - name: db-instance-backup-enabled
+      resource_types:
+      - AWS::RDS::DBInstance
+      parameters: {}
+      description: Assessment for db-instance-backup-enabled AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for db-instance-backup-enabled
+    - name: redshift-backup-enabled
+      resource_types:
+      - AWS::Redshift::Cluster
+      parameters: {}
+      description: Assessment for redshift-backup-enabled AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for redshift-backup-enabled
+    - name: dynamodb-pitr-enabled
+      resource_types:
+      - AWS::DynamoDB::Table
+      parameters: {}
+      description: Assessment for dynamodb-pitr-enabled AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for dynamodb-pitr-enabled
+    - name: elasticache-redis-cluster-automatic-backup-check
+      resource_types:
+      - AWS::ElastiCache::CacheCluster
+      parameters: {}
+      description: Assessment for elasticache-redis-cluster-automatic-backup-check
+        AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for elasticache-redis-cluster-automatic-backup-check
+    - name: s3-bucket-replication-enabled
+      resource_types:
+      - AWS::S3::Bucket
+      parameters: {}
+      description: Assessment for s3-bucket-replication-enabled AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for s3-bucket-replication-enabled
+    - name: backup-plan-min-frequency-and-min-retention-check
+      resource_types:
+      - AWS::Backup::BackupPlan
+      parameters: {}
+      description: Validates AWS Backup plans have appropriate backup frequency and retention policies to ensure data protection and recovery capabilities
+      remediation_guidance: |
+        Ensure backup plans have:
+        - Backup frequency of at least daily
+        - Retention period of at least 7 days
+        - Appropriate lifecycle policies
+        
+        To create or update a backup plan:
+        1. Go to AWS Backup console
+        2. Create or edit a backup plan
+        3. Add backup rules with:
+           - Schedule: Use cron or rate expressions (e.g., "cron(0 5 * * ? *)" for daily at 5 AM)
+           - Retention: Set to at least 7 days
+           - Lifecycle: Configure cold storage transition if needed
+        
+        AWS CLI example:
+        aws backup create-backup-plan --backup-plan '{
+          "BackupPlanName": "daily-backup-plan",
+          "Rules": [{
+            "RuleName": "daily-rule",
+            "ScheduleExpression": "cron(0 5 * * ? *)",
+            "Lifecycle": {"DeleteAfterDays": 30}
+          }]
+        }'
+    - name: backup-vault-access-policy-check
+      resource_types:
+      - AWS::Backup::BackupVault
+      parameters: {}
+      description: Checks AWS Backup vault access policies for security to ensure vaults follow principle of least privilege and do not allow public access
+      remediation_guidance: |
+        Ensure backup vaults:
+        - Do not allow public access (Principal: "*")
+        - Have restrictive access policies
+        - Follow principle of least privilege
+        - Consider using vault lock for critical vaults
+        
+        To secure a backup vault:
+        1. Go to AWS Backup console
+        2. Select the backup vault
+        3. Review and update access policy:
+           - Remove any wildcard principals
+           - Restrict to specific IAM roles/users
+           - Limit permissions to necessary actions only
+        4. Consider enabling vault lock to prevent deletion
+        
+        AWS CLI example to remove public access:
+        aws backup delete-backup-vault-access-policy --backup-vault-name MyVault
+        
+        To set a restrictive policy:
+        aws backup put-backup-vault-access-policy --backup-vault-name MyVault --policy '{
+          "Version": "2012-10-17",
+          "Statement": [{
+            "Effect": "Allow",
+            "Principal": {"AWS": "arn:aws:iam::123456789012:role/BackupRole"},
+            "Action": ["backup:DescribeBackupVault", "backup:ListRecoveryPointsByBackupVault"],
+            "Resource": "*"
+          }]
+        }'
+    - name: backup-selection-resource-coverage-check
+      resource_types:
+      - AWS::Backup::BackupPlan
+      parameters: {}
+      description: Validates that AWS Backup plans have backup selections that cover critical resources ensuring comprehensive backup coverage
+      remediation_guidance: |
+        Ensure backup plans have proper resource coverage:
+        - At least one backup selection per plan
+        - Selections target specific resources or use tags
+        - Critical resource types are included
+        - Selections are not empty
+        
+        To add backup selections:
+        1. Go to AWS Backup console
+        2. Select your backup plan
+        3. Add backup selection:
+           - Specify resources by ARN, or
+           - Use resource tags to automatically include resources, or
+           - Use conditions to dynamically select resources
+        4. Ensure critical resources (RDS, EBS, EFS, DynamoDB) are covered
+        
+        AWS CLI example to create a backup selection:
+        aws backup create-backup-selection --backup-plan-id <plan-id> --backup-selection '{
+          "SelectionName": "CriticalResources",
+          "IamRoleArn": "arn:aws:iam::123456789012:role/AWSBackupRole",
+          "ListOfTags": [{
+            "ConditionType": "STRINGEQUALS",
+            "ConditionKey": "backup",
+            "ConditionValue": "true"
+          }]
+        }'
+    - name: rds-backup-retention-check
+      resource_types:
+      - AWS::RDS::DBInstance
+      parameters: {}
+      description: "CIS Control 11.2 - Perform Automated Backups\n    AWS Config Rule: rds-backup-retention-check\n    \n    Ensures RDS instances have adequate backup retention periods (minimum 7 days)."
+      remediation_guidance: Follow AWS Config rule guidance for rds-backup-retention-check
+    - name: route53-query-logging-enabled
+      resource_types:
+      - AWS::Route53::HostedZone
+      parameters: {}
+      description: "CIS Control 8.2 - Collect Audit Logs\n    AWS Config Rule: route53-query-logging-enabled\n    \n    Ensures Route 53 hosted zones have query logging enabled."
+      remediation_guidance: Follow AWS Config rule guidance for route53-query-logging-enabled
+  '12.2':
+    title: Establish and Maintain a Secure Network Architecture
+    weight: 1.0
+    config_rules:
+    - name: vpc-default-security-group-closed
+      resource_types:
+      - AWS::EC2::SecurityGroup
+      parameters: {}
+      description: "CIS Control 12.2 - Establish and Maintain a Secure Network Architecture\n\
+        \    AWS Config Rule: vpc-default-security-group-closed\n    \n    Ensures\
+        \ default security groups restrict all traffic to prevent accidental exposure."
+      remediation_guidance: Follow AWS Config rule guidance for vpc-default-security-group-closed
+    - name: restricted-ssh
+      resource_types:
+      - AWS::EC2::SecurityGroup
+      parameters: {}
+      description: "CIS Control 12.2 - Establish and Maintain a Secure Network Architecture\n\
+        \    AWS Config Rule: restricted-ssh\n    \n    Ensures security groups do\
+        \ not allow unrestricted SSH access from 0.0.0.0/0."
+      remediation_guidance: Follow AWS Config rule guidance for restricted-ssh
+  '2.2':
+    title: Ensure Authorized Software is Currently Supported
+    weight: 1.0
+    config_rules:
+    - name: elastic-beanstalk-managed-updates-enabled
+      resource_types:
+      - AWS::ElasticBeanstalk::Environment
+      parameters: {}
+      description: Assessment for elastic-beanstalk-managed-updates-enabled Config
+        rule.
+      remediation_guidance: Follow AWS Config rule guidance for elastic-beanstalk-managed-updates-enabled
+    - name: ecs-fargate-latest-platform-version
+      resource_types:
+      - AWS::ECS::Service
+      parameters: {}
+      description: Assessment for ecs-fargate-latest-platform-version Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for ecs-fargate-latest-platform-version
+    - name: ec2-os-version-supported
+      resource_types:
+      - AWS::EC2::Instance
+      parameters: {}
+      description: "CIS Control 2.2 - Ensure Authorized Software is Currently Supported\n    AWS Config Rule: ec2-os-version-supported\n    \n    Ensures EC2 instances run supported operating system versions."
+      remediation_guidance: Follow AWS Config rule guidance for ec2-os-version-supported
+    - name: rds-engine-version-supported
+      resource_types:
+      - AWS::RDS::DBInstance
+      parameters: {}
+      description: "CIS Control 2.2 - Ensure Authorized Software is Currently Supported\n    AWS Config Rule: rds-engine-version-supported\n    \n    Ensures RDS instances run supported database engine versions."
+      remediation_guidance: Follow AWS Config rule guidance for rds-engine-version-supported
+    - name: lambda-runtime-supported
+      resource_types:
+      - AWS::Lambda::Function
+      parameters: {}
+      description: "CIS Control 2.2 - Ensure Authorized Software is Currently Supported\n    AWS Config Rule: lambda-runtime-supported\n    \n    Ensures Lambda functions use supported runtimes."
+      remediation_guidance: Follow AWS Config rule guidance for lambda-runtime-supported
+  2.2.1:
+    title: Ensure Authorized Software is Currently Supported
+    weight: 1.0
+    config_rules:
+    - name: opensearch-in-vpc-only
+      resource_types:
+      - AWS::OpenSearch::Domain
+      parameters: {}
+      description: Assessment for opensearch-in-vpc-only AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for opensearch-in-vpc-only
+  '3.10':
+    title: Encrypt Sensitive Data in Transit
+    weight: 1.0
+    config_rules:
+    - name: elasticsearch-node-to-node-encryption-check
+      resource_types:
+      - AWS::Elasticsearch::Domain
+      parameters: {}
+      description: Assessment for elasticsearch-node-to-node-encryption-check AWS
+        Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for elasticsearch-node-to-node-encryption-check
+  '3.11':
+    title: Encrypt Sensitive Data at Rest
+    weight: 1.0
+    config_rules:
+    - name: cloudwatch-log-group-encrypted
+      resource_types:
+      - AWS::Logs::LogGroup
+      parameters: {}
+      description: "CIS Control 3.11 - Encrypt Sensitive Data at Rest\n    AWS Config\
+        \ Rule: cloudwatch-log-group-encrypted\n    \n    Ensures CloudWatch Log Groups\
+        \ are encrypted with KMS keys."
+      remediation_guidance: Follow AWS Config rule guidance for cloudwatch-log-group-encrypted
+    - name: ebs-encryption-by-default
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: "CIS Control 3.11 - Encrypt Sensitive Data at Rest\n    AWS Config Rule: ebs-encryption-by-default\n    \n    Ensures EBS encryption by default is enabled at the account level for automatic volume encryption."
+      remediation_guidance: Follow AWS Config rule guidance for ebs-encryption-by-default
+    - name: rds-storage-encrypted
+      resource_types:
+      - AWS::RDS::DBInstance
+      parameters: {}
+      description: "CIS Control 3.11 - Encrypt Sensitive Data at Rest\n    AWS Config Rule: rds-storage-encrypted\n    \n    Ensures RDS database instances have storage encryption enabled."
+      remediation_guidance: Follow AWS Config rule guidance for rds-storage-encrypted
+    - name: efs-encrypted-check
+      resource_types:
+      - AWS::EFS::FileSystem
+      parameters: {}
+      description: "CIS Control 3.11 - Encrypt Sensitive Data at Rest\n    AWS Config Rule: efs-encrypted-check\n    \n    Ensures EFS file systems have encryption at rest enabled."
+      remediation_guidance: Follow AWS Config rule guidance for efs-encrypted-check
+    - name: dynamodb-table-encrypted-kms
+      resource_types:
+      - AWS::DynamoDB::Table
+      parameters: {}
+      description: "CIS Control 3.11 - Encrypt Sensitive Data at Rest\n    AWS Config Rule: dynamodb-table-encrypted-kms\n    \n    Ensures DynamoDB tables are encrypted with customer-managed KMS keys."
+      remediation_guidance: Follow AWS Config rule guidance for dynamodb-table-encrypted-kms
+    - name: s3-default-encryption-kms
+      resource_types:
+      - AWS::S3::Bucket
+      parameters: {}
+      description: "CIS Control 3.11 - Encrypt Sensitive Data at Rest\n    AWS Config Rule: s3-default-encryption-kms\n    \n    Ensures S3 buckets have default encryption enabled with customer-managed KMS keys."
+      remediation_guidance: Follow AWS Config rule guidance for s3-default-encryption-kms
+  '3.3':
+    title: Configure Data Access Control Lists
+    weight: 1.0
+    config_rules:
+    - name: s3-bucket-ssl-requests-only
+      resource_types:
+      - AWS::S3::Bucket
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: s3-bucket-ssl-requests-only\n    \n    Ensures S3 buckets require\
+        \ SSL/TLS for all requests to protect data in transit."
+      remediation_guidance: Follow AWS Config rule guidance for s3-bucket-ssl-requests-only
+    - name: s3-bucket-server-side-encryption-enabled
+      resource_types:
+      - AWS::S3::Bucket
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: s3-bucket-server-side-encryption-enabled\n    \n    Ensures\
+        \ S3 buckets have server-side encryption enabled to protect data at rest."
+      remediation_guidance: Follow AWS Config rule guidance for s3-bucket-server-side-encryption-enabled
+    - name: s3-bucket-logging-enabled
+      resource_types:
+      - AWS::S3::Bucket
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: s3-bucket-logging-enabled\n    \n    Ensures S3 buckets have\
+        \ access logging enabled for audit and compliance."
+      remediation_guidance: Follow AWS Config rule guidance for s3-bucket-logging-enabled
+    - name: iam-root-access-key-check
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: iam-root-access-key-check\n    \n    Ensures the root user\
+        \ does not have access keys attached to prevent unauthorized access."
+      remediation_guidance: Follow AWS Config rule guidance for iam-root-access-key-check
+    - name: iam-user-unused-credentials-check
+      resource_types:
+      - AWS::IAM::User
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: iam-user-unused-credentials-check\n    \n    Ensures IAM users\
+        \ don't have unused credentials that could pose security risks."
+      remediation_guidance: Follow AWS Config rule guidance for iam-user-unused-credentials-check
+    - name: iam-customer-policy-blocked-kms-actions
+      resource_types:
+      - AWS::IAM::Policy
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: iam-customer-policy-blocked-kms-actions\n    \n    Ensures\
+        \ customer-managed IAM policies don't contain blocked KMS actions."
+      remediation_guidance: Follow AWS Config rule guidance for iam-customer-policy-blocked-kms-actions
+    - name: iam-inline-policy-blocked-kms-actions
+      resource_types:
+      - AWS::IAM::User
+      - AWS::IAM::Role
+      - AWS::IAM::Group
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: iam-inline-policy-blocked-kms-actions\n    \n    Ensures inline\
+        \ IAM policies don't contain blocked KMS actions."
+      remediation_guidance: Follow AWS Config rule guidance for iam-inline-policy-blocked-kms-actions
+    - name: ebs-snapshot-public-restorable-check
+      resource_types:
+      - AWS::EC2::Snapshot
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: ebs-snapshot-public-restorable-check\n    \n    Ensures EBS\
+        \ snapshots are not publicly restorable to prevent data exposure."
+      remediation_guidance: Follow AWS Config rule guidance for ebs-snapshot-public-restorable-check
+    - name: rds-snapshots-public-prohibited
+      resource_types:
+      - AWS::RDS::DBSnapshot
+      - AWS::RDS::DBClusterSnapshot
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: rds-snapshots-public-prohibited\n    \n    Ensures RDS snapshots\
+        \ are not publicly accessible to prevent database data exposure."
+      remediation_guidance: Follow AWS Config rule guidance for rds-snapshots-public-prohibited
+    - name: rds-instance-public-access-check
+      resource_types:
+      - AWS::RDS::DBInstance
+      - AWS::RDS::DBCluster
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: rds-instance-public-access-check\n    \n    Ensures RDS instances\
+        \ are not publicly accessible to prevent database exposure."
+      remediation_guidance: Follow AWS Config rule guidance for rds-instance-public-access-check
+    - name: redshift-cluster-public-access-check
+      resource_types:
+      - AWS::Redshift::Cluster
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: redshift-cluster-public-access-check\n    \n    Ensures Redshift\
+        \ clusters are not publicly accessible to prevent data warehouse exposure."
+      remediation_guidance: Follow AWS Config rule guidance for redshift-cluster-public-access-check
+    - name: s3-bucket-level-public-access-prohibited
+      resource_types:
+      - AWS::S3::Bucket
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: s3-bucket-level-public-access-prohibited\n    \n    Ensures\
+        \ S3 buckets do not allow public access at the bucket level to prevent data\
+        \ exposure."
+      remediation_guidance: Follow AWS Config rule guidance for s3-bucket-level-public-access-prohibited
+    - name: iam-user-mfa-enabled
+      resource_types:
+      - AWS::IAM::User
+      parameters: {}
+      description: Assessment for iam-user-mfa-enabled Config rule - ensures IAM users
+        have MFA.
+      remediation_guidance: Follow AWS Config rule guidance for iam-user-mfa-enabled
+    - name: iam-root-access-key-check
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: Assessment for iam-root-access-key-check Config rule - ensures
+        root has no access keys.
+      remediation_guidance: Follow AWS Config rule guidance for iam-root-access-key-check
+    - name: s3-bucket-public-read-prohibited
+      resource_types:
+      - AWS::S3::Bucket
+      parameters: {}
+      description: Assessment for s3-bucket-public-read-prohibited Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for s3-bucket-public-read-prohibited
+    - name: ec2-instance-no-public-ip
+      resource_types:
+      - AWS::EC2::Instance
+      parameters: {}
+      description: Assessment for ec2-instance-no-public-ip Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for ec2-instance-no-public-ip
+    - name: autoscaling-launch-config-public-ip-disabled
+      resource_types:
+      - AWS::AutoScaling::LaunchConfiguration
+      parameters: {}
+      description: Assessment for autoscaling-launch-config-public-ip-disabled AWS
+        Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for autoscaling-launch-config-public-ip-disabled
+    - name: efs-access-point-enforce-root-directory
+      resource_types:
+      - AWS::EFS::AccessPoint
+      parameters: {}
+      description: Assessment for efs-access-point-enforce-root-directory AWS Config
+        rule.
+      remediation_guidance: Follow AWS Config rule guidance for efs-access-point-enforce-root-directory
+    - name: ec2-managedinstance-association-compliance-status-check
+      resource_types:
+      - AWS::EC2::Instance
+      parameters: {}
+      description: "CIS Control 1.1/2.4/4.1 - Systems Management\n    AWS Config Rule:\
+        \ ec2-managedinstance-association-compliance-status-check\n    \n    Ensures\
+        \ EC2 instances have proper Systems Manager associations for compliance tracking."
+      remediation_guidance: Follow AWS Config rule guidance for ec2-managedinstance-association-compliance-status-check
+    - name: emr-kerberos-enabled
+      resource_types:
+      - AWS::EMR::Cluster
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: emr-kerberos-enabled\n    \n    Ensures EMR clusters have Kerberos\
+        \ authentication enabled to prevent unauthorized access."
+      remediation_guidance: Follow AWS Config rule guidance for emr-kerberos-enabled
+    - name: lambda-inside-vpc
+      resource_types:
+      - AWS::Lambda::Function
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: lambda-inside-vpc\n    \n    Ensures Lambda functions are deployed\
+        \ within VPC when needed for network isolation."
+      remediation_guidance: Follow AWS Config rule guidance for lambda-inside-vpc
+    - name: ecs-task-definition-user-for-host-mode-check
+      resource_types:
+      - AWS::ECS::TaskDefinition
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: ecs-task-definition-user-for-host-mode-check\n    \n    Ensures\
+        \ ECS tasks in host mode do not run with elevated privileges to prevent container\
+        \ privilege escalation."
+      remediation_guidance: Follow AWS Config rule guidance for ecs-task-definition-user-for-host-mode-check
+    - name: iam-group-has-users-check
+      resource_types:
+      - AWS::IAM::Group
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: iam-group-has-users-check\n    \n    Ensures IAM groups have\
+        \ at least one user for proper access management."
+      remediation_guidance: Follow AWS Config rule guidance for iam-group-has-users-check
+    - name: iam-policy-no-statements-with-full-access
+      resource_types:
+      - AWS::IAM::Policy
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: iam-policy-no-statements-with-full-access\n    \n    Prevents\
+        \ IAM policies with overly broad permissions to prevent privilege escalation."
+      remediation_guidance: Follow AWS Config rule guidance for iam-policy-no-statements-with-full-access
+    - name: iam-user-no-policies-check
+      resource_types:
+      - AWS::IAM::User
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: iam-user-no-policies-check\n    \n    Ensures IAM policies\
+        \ are attached to groups/roles, not users directly for proper access management."
+      remediation_guidance: Follow AWS Config rule guidance for iam-user-no-policies-check
+    - name: ssm-document-not-public
+      resource_types:
+      - AWS::SSM::Document
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: ssm-document-not-public\n    \n    Ensures SSM documents are\
+        \ not publicly accessible to prevent exposure of automation scripts."
+      remediation_guidance: Follow AWS Config rule guidance for ssm-document-not-public
+    - name: iam-policy-no-statements-with-admin-access
+      resource_types:
+      - AWS::IAM::Policy
+      parameters: {}
+      description: Assessment for iam-policy-no-statements-with-admin-access Config
+        rule.
+      remediation_guidance: Follow AWS Config rule guidance for iam-policy-no-statements-with-admin-access
+    - name: iam-no-inline-policy-check
+      resource_types:
+      - AWS::IAM::User
+      - AWS::IAM::Role
+      - AWS::IAM::Group
+      parameters: {}
+      description: Assessment for iam-no-inline-policy-check Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for iam-no-inline-policy-check
+    - name: iam-user-group-membership-check
+      resource_types:
+      - AWS::IAM::User
+      parameters: {}
+      description: Assessment for iam-user-group-membership-check Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for iam-user-group-membership-check
+    - name: dms-replication-not-public
+      resource_types:
+      - AWS::DMS::ReplicationInstance
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: dms-replication-not-public\n    \n    Ensures DMS replication\
+        \ instances are not publicly accessible to prevent data exposure."
+      remediation_guidance: Follow AWS Config rule guidance for dms-replication-not-public
+    - name: elasticsearch-in-vpc-only
+      resource_types:
+      - AWS::Elasticsearch::Domain
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: elasticsearch-in-vpc-only\n    \n    Ensures Elasticsearch\
+        \ domains are deployed within VPC to prevent public access."
+      remediation_guidance: Follow AWS Config rule guidance for elasticsearch-in-vpc-only
+    - name: ec2-instances-in-vpc
+      resource_types:
+      - AWS::EC2::Instance
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: ec2-instances-in-vpc\n    \n    Ensures EC2 instances are deployed\
+        \ within VPC for network security."
+      remediation_guidance: Follow AWS Config rule guidance for ec2-instances-in-vpc
+    - name: emr-master-no-public-ip
+      resource_types:
+      - AWS::EMR::Cluster
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: emr-master-no-public-ip\n    \n    Ensures EMR master nodes\
+        \ do not have public IP addresses."
+      remediation_guidance: Follow AWS Config rule guidance for emr-master-no-public-ip
+    - name: lambda-function-public-access-prohibited
+      resource_types:
+      - AWS::Lambda::Function
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: lambda-function-public-access-prohibited\n    \n    Ensures\
+        \ Lambda functions cannot be publicly accessed."
+      remediation_guidance: Follow AWS Config rule guidance for lambda-function-public-access-prohibited
+    - name: sagemaker-notebook-no-direct-internet-access
+      resource_types:
+      - AWS::SageMaker::NotebookInstance
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: sagemaker-notebook-no-direct-internet-access\n    \n    Ensures\
+        \ SageMaker notebooks do not have direct internet access."
+      remediation_guidance: Follow AWS Config rule guidance for sagemaker-notebook-no-direct-internet-access
+    - name: subnet-auto-assign-public-ip-disabled
+      resource_types:
+      - AWS::EC2::Subnet
+      parameters: {}
+      description: "CIS Control 3.3 - Configure Data Access Control Lists\n    AWS\
+        \ Config Rule: subnet-auto-assign-public-ip-disabled\n    \n    Ensures subnets\
+        \ do not automatically assign public IPs to prevent accidental exposure."
+      remediation_guidance: Follow AWS Config rule guidance for subnet-auto-assign-public-ip-disabled
+    - name: s3-account-level-public-access-blocks-periodic
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: Assessment for s3-account-level-public-access-blocks-periodic AWS
+        Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for s3-account-level-public-access-blocks-periodic
+    - name: s3-bucket-public-write-prohibited
+      resource_types:
+      - AWS::S3::Bucket
+      parameters: {}
+      description: Assessment for s3-bucket-public-write-prohibited AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for s3-bucket-public-write-prohibited
+    - name: ec2-imdsv2-check
+      resource_types:
+      - AWS::EC2::Instance
+      parameters: {}
+      description: Assessment for ec2-imdsv2-check Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for ec2-imdsv2-check
+    - name: ec2-instance-profile-attached
+      resource_types:
+      - AWS::EC2::Instance
+      parameters: {}
+      description: Assessment for ec2-instance-profile-attached Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for ec2-instance-profile-attached
+  '3.4':
+    title: Configure Automatic Session Locking on Enterprise Assets
+    weight: 1.0
+    config_rules:
+    - name: s3-bucket-versioning-enabled
+      resource_types:
+      - AWS::S3::Bucket
+      parameters: {}
+      description: "CIS Control 3.4 - Enforce Data Retention\n    AWS Config Rule:\
+        \ s3-bucket-versioning-enabled\n    \n    Ensures S3 buckets have versioning\
+        \ enabled for data protection and recovery."
+      remediation_guidance: Follow AWS Config rule guidance for s3-bucket-versioning-enabled
+    - name: s3-version-lifecycle-policy-check
+      resource_types:
+      - AWS::S3::Bucket
+      parameters: {}
+      description: Assessment for s3-version-lifecycle-policy-check Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for s3-version-lifecycle-policy-check
+    - name: cw-loggroup-retention-period-check
+      resource_types:
+      - AWS::Logs::LogGroup
+      parameters: {}
+      description: Assessment for cw-loggroup-retention-period-check Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for cw-loggroup-retention-period-check
+  '4.1':
+    title: Establish and Maintain a Secure Configuration Process
+    weight: 1.0
+    config_rules:
+    - name: account-part-of-organizations
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: Assessment for account-part-of-organizations Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for account-part-of-organizations
+    - name: ec2-volume-inuse-check
+      resource_types:
+      - AWS::EC2::Volume
+      parameters: {}
+      description: Assessment for ec2-volume-inuse-check Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for ec2-volume-inuse-check
+    - name: redshift-cluster-maintenancesettings-check
+      resource_types:
+      - AWS::Redshift::Cluster
+      parameters: {}
+      description: Assessment for redshift-cluster-maintenancesettings-check Config
+        rule.
+      remediation_guidance: Follow AWS Config rule guidance for redshift-cluster-maintenancesettings-check
+    - name: secretsmanager-rotation-enabled-check
+      resource_types:
+      - AWS::SecretsManager::Secret
+      parameters: {}
+      description: Assessment for secretsmanager-rotation-enabled-check Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for secretsmanager-rotation-enabled-check
+    - name: ecs-task-definition-nonroot-user
+      resource_types:
+      - AWS::ECS::TaskDefinition
+      parameters: {}
+      description: Assessment for ecs-task-definition-nonroot-user AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for ecs-task-definition-nonroot-user
+    - name: access-keys-rotated
+      resource_types:
+      - AWS::IAM::User
+      parameters: {}
+      description: Assessment for access-keys-rotated Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for access-keys-rotated
+    - name: config-conformance-pack-deployed
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: "CIS Control 4.1 - Establish and Maintain a Secure Configuration Process\n    AWS Config Rule: config-conformance-pack-deployed\n    \n    Ensures AWS Config conformance packs are deployed for configuration management."
+      remediation_guidance: Follow AWS Config rule guidance for config-conformance-pack-deployed
+    - name: securityhub-standards-enabled
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: "CIS Control 4.1 - Establish and Maintain a Secure Configuration Process\n    AWS Config Rule: securityhub-standards-enabled\n    \n    Ensures Security Hub standards are enabled for security configuration management."
+      remediation_guidance: Follow AWS Config rule guidance for securityhub-standards-enabled
+  '5.2':
+    title: Use Unique Passwords
+    weight: 1.0
+    config_rules:
+    - name: iam-password-policy
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: Assessment for iam-password-policy Config rule - ensures strong
+        password policy.
+      remediation_guidance: Follow AWS Config rule guidance for iam-password-policy
+  '6.2':
+    title: Establish and Maintain a Secure Network Architecture
+    weight: 1.0
+    config_rules:
+    - name: guardduty-enabled-centralized
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: "CIS Control 6.2 - Establish and Maintain a Secure Network Architecture\n    AWS Config Rule: guardduty-enabled-centralized\n    \n    Ensures GuardDuty is enabled for threat detection and continuous monitoring."
+      remediation_guidance: Follow AWS Config rule guidance for guardduty-enabled-centralized
+    - name: inspector-enabled
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: "CIS Control 6.2 - Establish and Maintain a Secure Network Architecture\n    AWS Config Rule: inspector-enabled\n    \n    Ensures Amazon Inspector is enabled for vulnerability scanning and security assessments."
+      remediation_guidance: Follow AWS Config rule guidance for inspector-enabled
+    - name: macie-enabled
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: "CIS Control 6.2 - Establish and Maintain a Secure Network Architecture\n    AWS Config Rule: macie-enabled\n    \n    Ensures Amazon Macie is enabled for sensitive data discovery and protection."
+      remediation_guidance: Follow AWS Config rule guidance for macie-enabled
+    - name: iam-access-analyzer-enabled
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: "CIS Control 6.2 - Establish and Maintain a Secure Network Architecture\n    AWS Config Rule: iam-access-analyzer-enabled\n    \n    Ensures IAM Access Analyzer is enabled to detect external access to resources."
+      remediation_guidance: Follow AWS Config rule guidance for iam-access-analyzer-enabled
+  '8.2':
+    title: Collect Audit Logs
+    weight: 1.0
+    config_rules:
+    - name: cloudtrail-enabled
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: "CIS Control 8.2 - Collect Audit Logs\n    AWS Config Rule: cloudtrail-enabled\n\
+        \    \n    Ensures CloudTrail is enabled to record AWS Management Console\
+        \ actions and API calls."
+      remediation_guidance: Follow AWS Config rule guidance for cloudtrail-enabled
+    - name: vpc-flow-logs-enabled
+      resource_types:
+      - AWS::EC2::VPC
+      parameters: {}
+      description: "CIS Control 8.2 - Collect Audit Logs\n    AWS Config Rule: vpc-flow-logs-enabled\n    \n    Ensures VPC Flow Logs are enabled for network traffic monitoring and analysis."
+      remediation_guidance: Follow AWS Config rule guidance for vpc-flow-logs-enabled
+    - name: elb-logging-enabled
+      resource_types:
+      - AWS::ElasticLoadBalancingV2::LoadBalancer
+      parameters: {}
+      description: "CIS Control 8.2 - Collect Audit Logs\n    AWS Config Rule: elb-logging-enabled\n    \n    Ensures Elastic Load Balancer access logs are enabled for request tracking."
+      remediation_guidance: Follow AWS Config rule guidance for elb-logging-enabled
+    - name: cloudfront-accesslogs-enabled
+      resource_types:
+      - AWS::CloudFront::Distribution
+      parameters: {}
+      description: "CIS Control 8.2 - Collect Audit Logs\n    AWS Config Rule: cloudfront-accesslogs-enabled\n    \n    Ensures CloudFront distributions have access logging enabled."
+      remediation_guidance: Follow AWS Config rule guidance for cloudfront-accesslogs-enabled
+    - name: wafv2-logging-enabled
+      resource_types:
+      - AWS::WAFv2::WebACL
+      parameters: {}
+      description: "CIS Control 8.2 - Collect Audit Logs\n    AWS Config Rule: wafv2-logging-enabled\n    \n    Ensures WAF web ACLs have logging enabled for security monitoring."
+      remediation_guidance: Follow AWS Config rule guidance for wafv2-logging-enabled
+  '8.8':
+    title: Collect Command-Line Audit Logs
+    weight: 1.0
+    config_rules:
+    - name: securityhub-enabled
+      resource_types:
+      - AWS::SecurityHub::Hub
+      parameters: {}
+      description: Assessment for securityhub-enabled AWS Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for securityhub-enabled
+  '7.1':
+    title: Establish and Maintain a Vulnerability Management Process
+    weight: 1.0
+    config_rules:
+    - name: ssm-patch-manager-enabled
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: "CIS Control 7.1 - Establish and Maintain a Vulnerability Management Process\n    AWS Config Rule: ssm-patch-manager-enabled\n    \n    Ensures AWS Systems Manager Patch Manager is configured with patch baselines."
+      remediation_guidance: Follow AWS Config rule guidance for ssm-patch-manager-enabled
+    - name: ssm-patch-baseline-configured
+      resource_types:
+      - AWS::SSM::PatchBaseline
+      parameters: {}
+      description: "CIS Control 7.1 - Establish and Maintain a Vulnerability Management Process\n    AWS Config Rule: ssm-patch-baseline-configured\n    \n    Ensures SSM patch baselines have proper approval rules and patch filters configured."
+      remediation_guidance: Follow AWS Config rule guidance for ssm-patch-baseline-configured
+    - name: ec2-patch-compliance-status
+      resource_types:
+      - AWS::EC2::Instance
+      parameters: {}
+      description: "CIS Control 7.1 - Establish and Maintain a Vulnerability Management Process\n    AWS Config Rule: ec2-patch-compliance-status\n    \n    Ensures EC2 instances are compliant with patch baselines and have no missing patches."
+      remediation_guidance: Follow AWS Config rule guidance for ec2-patch-compliance-status
+  '5.3':
+    title: Disable Dormant Accounts
+    weight: 1.0
+    config_rules:
+    - name: sso-enabled-check
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: "CIS Control 5.3 - Disable Dormant Accounts\n    AWS Config Rule: sso-enabled-check\n    \n    Ensures AWS SSO (Identity Center) is enabled for centralized identity management."
+      remediation_guidance: Follow AWS Config rule guidance for sso-enabled-check
+    - name: identity-center-configured
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: "CIS Control 5.3 - Disable Dormant Accounts\n    AWS Config Rule: identity-center-configured\n    \n    Ensures AWS Identity Center has permission sets and proper configuration."
+      remediation_guidance: Follow AWS Config rule guidance for identity-center-configured
+    - name: iam-user-last-access-check
+      resource_types:
+      - AWS::IAM::User
+      parameters: {}
+      description: "CIS Control 5.3 - Disable Dormant Accounts\n    AWS Config Rule: iam-user-last-access-check\n    \n    Ensures IAM users have been accessed recently (within 90 days)."
+      remediation_guidance: Follow AWS Config rule guidance for iam-user-last-access-check
+  '6.5':
+    title: Require MFA for Administrative Access
+    weight: 1.0
+    config_rules:
+    - name: iam-admin-mfa-required
+      resource_types:
+      - AWS::IAM::User
+      parameters: {}
+      description: "CIS Control 6.5 - Require MFA for Administrative Access\n    AWS Config Rule: iam-admin-mfa-required\n    \n    Ensures IAM users with administrative privileges have MFA enabled."
+      remediation_guidance: Follow AWS Config rule guidance for iam-admin-mfa-required
+    - name: cognito-mfa-enabled
+      resource_types:
+      - AWS::Cognito::UserPool
+      parameters: {}
+      description: "CIS Control 6.5 - Require MFA for Administrative Access\n    AWS Config Rule: cognito-mfa-enabled\n    \n    Ensures Cognito user pools require MFA for user authentication."
+      remediation_guidance: Follow AWS Config rule guidance for cognito-mfa-enabled
+    - name: vpn-mfa-enabled
+      resource_types:
+      - AWS::EC2::ClientVpnEndpoint
+      parameters: {}
+      description: "CIS Control 6.5 - Require MFA for Administrative Access\n    AWS Config Rule: vpn-mfa-enabled\n    \n    Ensures Client VPN endpoints require MFA for authentication."
+      remediation_guidance: Follow AWS Config rule guidance for vpn-mfa-enabled
+  '3.10':
+    title: Encrypt Sensitive Data in Transit
+    weight: 1.0
+    config_rules:
+    - name: alb-http-to-https-redirection-check
+      resource_types:
+      - AWS::ElasticLoadBalancingV2::LoadBalancer
+      parameters: {}
+      description: "CIS Control 3.10 - Encrypt Sensitive Data in Transit\n    AWS Config Rule: alb-http-to-https-redirection-check\n    \n    Ensures Application Load Balancers redirect HTTP traffic to HTTPS."
+      remediation_guidance: Follow AWS Config rule guidance for alb-http-to-https-redirection-check
+    - name: elb-tls-https-listeners-only
+      resource_types:
+      - AWS::ElasticLoadBalancingV2::LoadBalancer
+      parameters: {}
+      description: "CIS Control 3.10 - Encrypt Sensitive Data in Transit\n    AWS Config Rule: elb-tls-https-listeners-only\n    \n    Ensures Elastic Load Balancers use only HTTPS/TLS listeners."
+      remediation_guidance: Follow AWS Config rule guidance for elb-tls-https-listeners-only
+    - name: rds-ssl-connection-required
+      resource_types:
+      - AWS::RDS::DBInstance
+      parameters: {}
+      description: "CIS Control 3.10 - Encrypt Sensitive Data in Transit\n    AWS Config Rule: rds-ssl-connection-required\n    \n    Ensures RDS database instances require SSL/TLS connections."
+      remediation_guidance: Follow AWS Config rule guidance for rds-ssl-connection-required
+    - name: api-gateway-ssl-enabled
+      resource_types:
+      - AWS::ApiGateway::RestApi
+      parameters: {}
+      description: "CIS Control 3.10 - Encrypt Sensitive Data in Transit\n    AWS Config Rule: api-gateway-ssl-enabled\n    \n    Ensures API Gateway REST APIs use SSL/TLS certificates."
+      remediation_guidance: Follow AWS Config rule guidance for api-gateway-ssl-enabled
+    - name: redshift-require-tls-ssl
+      resource_types:
+      - AWS::Redshift::Cluster
+      parameters: {}
+      description: "CIS Control 3.10 - Encrypt Sensitive Data in Transit\n    AWS Config Rule: redshift-require-tls-ssl\n    \n    Ensures Redshift clusters require TLS/SSL for connections."
+      remediation_guidance: Follow AWS Config rule guidance for redshift-require-tls-ssl
+    - name: sns-encrypted-kms
+      resource_types:
+      - AWS::SNS::Topic
+      parameters: {}
+      description: "CIS Control 3.11 - Encrypt Sensitive Data at Rest\n    AWS Config Rule: sns-encrypted-kms\n    \n    Ensures SNS topics are encrypted with customer-managed KMS keys."
+      remediation_guidance: Follow AWS Config rule guidance for sns-encrypted-kms
+    - name: sqs-queue-encrypted
+      resource_types:
+      - AWS::SQS::Queue
+      parameters: {}
+      description: "CIS Control 3.11 - Encrypt Sensitive Data at Rest\n    AWS Config Rule: sqs-queue-encrypted\n    \n    Ensures SQS queues are encrypted at rest."
+      remediation_guidance: Follow AWS Config rule guidance for sqs-queue-encrypted
+    - name: cloudtrail-s3-dataevents-enabled
+      resource_types:
+      - AWS::CloudTrail::Trail
+      parameters: {}
+      description: "CIS Control 8.2 - Collect Audit Logs\n    AWS Config Rule: cloudtrail-s3-dataevents-enabled\n    \n    Ensures CloudTrail logs S3 data events for object-level operations monitoring."
+      remediation_guidance: Follow AWS Config rule guidance for cloudtrail-s3-dataevents-enabled
+  '7.5':
+    title: Perform Automated Vulnerability Scans
+    weight: 1.0
+    config_rules:
+    - name: inspector-assessment-enabled
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: "CIS Control 7.5 - Perform Automated Vulnerability Scans\n    AWS Config Rule: inspector-assessment-enabled\n    \n    Ensures Amazon Inspector assessments are actively running for vulnerability detection."
+      remediation_guidance: Follow AWS Config rule guidance for inspector-assessment-enabled
+  '12.4':
+    title: Establish and Maintain Architecture Diagram(s)
+    weight: 1.0
+    config_rules:
+    - name: ssm-session-manager-enabled
+      resource_types:
+      - AWS::EC2::Instance
+      parameters: {}
+      description: "CIS Control 12.4 - Establish and Maintain Architecture Diagram(s)\n    AWS Config Rule: ssm-session-manager-enabled\n    \n    Ensures Systems Manager Session Manager is available for secure instance access."
+      remediation_guidance: Follow AWS Config rule guidance for ssm-session-manager-enabled
+  '3.12':
+    title: Segment Data Processing and Storage Based on Sensitivity
+    weight: 1.0
+    config_rules:
+    - name: data-classification-tagging
+      resource_types:
+      - AWS::RDS::DBInstance
+      - AWS::DynamoDB::Table
+      parameters: {}
+      description: "CIS Control 3.12 - Segment Data Processing and Storage Based on Sensitivity\n    AWS Config Rule: data-classification-tagging\n    \n    Ensures data resources have proper classification tags (DataClassification, Sensitivity, or Compliance)."
+      remediation_guidance: Follow AWS Config rule guidance for data-classification-tagging
+    - name: s3-bucket-classification-tags
+      resource_types:
+      - AWS::S3::Bucket
+      parameters: {}
+      description: "CIS Control 3.12 - Segment Data Processing and Storage Based on Sensitivity\n    AWS Config Rule: s3-bucket-classification-tags\n    \n    Ensures S3 buckets have proper data classification tags."
+      remediation_guidance: Follow AWS Config rule guidance for s3-bucket-classification-tags
+  '13.6':
+    title: Deny Communications with Known Malicious IP Addresses
+    weight: 1.0
+    config_rules:
+    - name: network-firewall-deployed
+      resource_types:
+      - AWS::EC2::VPC
+      parameters: {}
+      description: "CIS Control 13.6 - Deny Communications with Known Malicious IP Addresses\n    AWS Config Rule: network-firewall-deployed\n    \n    Ensures AWS Network Firewall is deployed for advanced network protection."
+      remediation_guidance: Follow AWS Config rule guidance for network-firewall-deployed
+    - name: route53-resolver-firewall-enabled
+      resource_types:
+      - AWS::EC2::VPC
+      parameters: {}
+      description: "CIS Control 13.6 - Deny Communications with Known Malicious IP Addresses\n    AWS Config Rule: route53-resolver-firewall-enabled\n    \n    Ensures Route 53 Resolver DNS Firewall is enabled for DNS-level protection."
+      remediation_guidance: Follow AWS Config rule guidance for route53-resolver-firewall-enabled
+  '11.3':
+    title: Protect Recovery Data
+    weight: 1.0
+    config_rules:
+    - name: backup-vault-encryption-enabled
+      resource_types:
+      - AWS::Backup::BackupVault
+      parameters: {}
+      description: "CIS Control 11.3 - Protect Recovery Data\n    AWS Config Rule: backup-vault-encryption-enabled\n    \n    Ensures AWS Backup vaults are encrypted with KMS."
+      remediation_guidance: Follow AWS Config rule guidance for backup-vault-encryption-enabled
+    - name: backup-vault-lock-enabled
+      resource_types:
+      - AWS::Backup::BackupVault
+      parameters: {}
+      description: "CIS Control 11.3 - Protect Recovery Data\n    AWS Config Rule: backup-vault-lock-enabled\n    \n    Ensures backup vaults have vault lock enabled to prevent deletion."
+      remediation_guidance: Follow AWS Config rule guidance for backup-vault-lock-enabled
+  '11.4':
+    title: Establish and Maintain an Isolated Instance of Recovery Data
+    weight: 1.0
+    config_rules:
+    - name: backup-cross-region-copy-enabled
+      resource_types:
+      - AWS::Backup::BackupPlan
+      parameters: {}
+      description: "CIS Control 11.4 - Establish and Maintain an Isolated Instance of Recovery Data\n    AWS Config Rule: backup-cross-region-copy-enabled\n    \n    Ensures backup plans include cross-region copy for disaster recovery."
+      remediation_guidance: Follow AWS Config rule guidance for backup-cross-region-copy-enabled

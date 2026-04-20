@@ -1,0 +1,100 @@
+implementation_group: IG3
+total_rules: 13
+description: Advanced security for enterprises with high-risk environments
+controls:
+  '12.8':
+    title: Establish and Maintain Dedicated Computing Resources for All Administrative
+      Work
+    weight: 1.0
+    config_rules:
+    - name: api-gw-associated-with-waf
+      resource_types:
+      - AWS::ApiGateway::Stage
+      parameters: {}
+      description: Assessment for api-gw-associated-with-waf Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for api-gw-associated-with-waf
+    - name: vpc-sg-open-only-to-authorized-ports
+      resource_types:
+      - AWS::EC2::SecurityGroup
+      parameters: {}
+      description: Assessment for vpc-sg-open-only-to-authorized-ports Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for vpc-sg-open-only-to-authorized-ports
+    - name: no-unrestricted-route-to-igw
+      resource_types:
+      - AWS::EC2::RouteTable
+      parameters: {}
+      description: Assessment for no-unrestricted-route-to-igw Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for no-unrestricted-route-to-igw
+  '13.1':
+    title: Centralize Security Event Alerting
+    weight: 1.0
+    config_rules:
+    - name: restricted-incoming-traffic
+      resource_types:
+      - AWS::EC2::SecurityGroup
+      parameters: {}
+      description: Assessment for restricted-incoming-traffic Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for restricted-incoming-traffic
+    - name: incoming-ssh-disabled
+      resource_types:
+      - AWS::EC2::SecurityGroup
+      parameters: {}
+      description: Assessment for incoming-ssh-disabled Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for incoming-ssh-disabled
+    - name: vpc-flow-logs-enabled
+      resource_types:
+      - AWS::EC2::VPC
+      parameters: {}
+      description: Assessment for VPC Flow Logs enabled for network monitoring.
+      remediation_guidance: Follow AWS Config rule guidance for vpc-flow-logs-enabled
+  '3.14':
+    title: Log Sensitive Data Access
+    weight: 1.0
+    config_rules:
+    - name: api-gw-execution-logging-enabled
+      resource_types:
+      - AWS::ApiGateway::Stage
+      parameters: {}
+      description: Assessment for api-gw-execution-logging-enabled Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for api-gw-execution-logging-enabled
+    - name: cloudtrail-s3-dataevents-enabled
+      resource_types:
+      - AWS::CloudTrail::Trail
+      parameters: {}
+      description: Assessment for cloudtrail-s3-dataevents-enabled Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for cloudtrail-s3-dataevents-enabled
+    - name: multi-region-cloudtrail-enabled
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: Assessment for multi-region-cloudtrail-enabled Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for multi-region-cloudtrail-enabled
+    - name: cloud-trail-cloud-watch-logs-enabled
+      resource_types:
+      - AWS::CloudTrail::Trail
+      parameters: {}
+      description: Assessment for cloud-trail-cloud-watch-logs-enabled Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for cloud-trail-cloud-watch-logs-enabled
+  '7.1':
+    title: Establish and Maintain a Vulnerability Management Process
+    weight: 1.0
+    config_rules:
+    - name: ecr-private-image-scanning-enabled
+      resource_types:
+      - AWS::ECR::Repository
+      parameters: {}
+      description: Assessment for ecr-private-image-scanning-enabled Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for ecr-private-image-scanning-enabled
+    - name: guardduty-enabled-centralized
+      resource_types:
+      - AWS::::Account
+      parameters: {}
+      description: Assessment for guardduty-enabled-centralized Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for guardduty-enabled-centralized
+    - name: ec2-managedinstance-patch-compliance-status-check
+      resource_types:
+      - AWS::EC2::Instance
+      parameters: {}
+      description: Assessment for ec2-managedinstance-patch-compliance-status-check
+        Config rule.
+      remediation_guidance: Follow AWS Config rule guidance for ec2-managedinstance-patch-compliance-status-check

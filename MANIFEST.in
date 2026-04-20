@@ -1,0 +1,13 @@
+include README.md
+include LICENSE
+include requirements.txt
+include pytest.ini
+recursive-include aws_cis_assessment/config *.yaml
+recursive-include aws_cis_assessment/templates *.html *.css *.js
+recursive-include docs *.md
+recursive-exclude tests *
+recursive-exclude test_benchmarks *
+recursive-exclude benchmarks *
+global-exclude *.pyc
+global-exclude __pycache__
+global-exclude .DS_Store
