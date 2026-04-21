@@ -7,7 +7,7 @@ name = "aws-cis-controls-assessment"
 dynamic = ["version"]
 description = "Production-ready AWS CIS Controls compliance assessment framework with 199 unique rules across 40 CIS Controls v8.1 safeguards"
 readme = "README.md"
-license = {text = "MIT"}
+license = "MIT"
 authors = [
     {name = "AWS CIS Assessment Team", email = "rhf@amazon.com"}
 ]
@@ -20,7 +20,6 @@ classifiers = [
     "Intended Audience :: System Administrators",
     "Intended Audience :: Information Technology",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.8",

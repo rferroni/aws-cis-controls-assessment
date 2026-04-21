@@ -11,6 +11,6 @@ Coverage (cumulative):
   - IG3: 30 of 153 safeguards (19.6%) with 13 rules (includes IG1+IG2)
 """
 
-__version__ = "1.2.4"
+__version__ = "1.2.5"
 __author__ = "AWS CIS Assessment Team"
 __description__ = "Production-ready AWS CIS Controls Compliance Assessment Framework with Enhanced IG1 Coverage"
