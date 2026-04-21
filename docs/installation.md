@@ -45,7 +45,7 @@ aws-cis-assess --version
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/aws-cis-controls-assessment.git
+git clone https://github.com/rferroni/aws-cis-controls-assessment.git
 cd aws-cis-controls-assessment
 
 # Create virtual environment (recommended)
@@ -68,7 +68,17 @@ aws-cis-assess --version
 
 The tool supports multiple methods for AWS credential configuration:
 
-### Method 1: AWS CLI Configuration (Recommended)
+### Method 1: AWS SSO (Recommended)
+
+```bash
+# Configure AWS SSO
+aws configure sso
+
+# Use SSO profile
+aws-cis-assess assess --aws-profile my-sso-profile
+```
+
+### Method 2: AWS CLI Configuration
 
 ```bash
 # Install AWS CLI if not already installed
@@ -80,31 +90,24 @@ aws configure
 
 This creates `~/.aws/credentials` and `~/.aws/config` files.
 
-### Method 2: Environment Variables
-
-```bash
-export AWS_ACCESS_KEY_ID=your_access_key
-export AWS_SECRET_ACCESS_KEY=your_secret_key
-export AWS_DEFAULT_REGION=us-east-1
-```
-
 ### Method 3: IAM Roles (EC2/ECS/Lambda)
 
 When running on AWS services, the tool automatically uses IAM roles attached to the service.
 
-### Method 4: AWS SSO
+### Method 4: Environment Variables (Not Recommended)
+
+> ⚠️ **Avoid using long-lived access keys.** Environment variables with permanent credentials are a security risk — they can leak through logs, shell history, or process listings. Prefer SSO, IAM roles, or short-lived session credentials instead.
 
 ```bash
-# Configure AWS SSO
-aws configure sso
-
-# Use SSO profile
-aws-cis-assess assess --aws-profile my-sso-profile
+export AWS_ACCESS_KEY_ID=your_access_key
+export AWS_SECRET_ACCESS_KEY=your_secret_key
+export AWS_SESSION_TOKEN=your_session_token
+export AWS_DEFAULT_REGION=us-east-1
 ```
 
 ## Required IAM Permissions
 
-The tool requires read-only permissions for various AWS services. Here's a comprehensive IAM policy that covers all assessments:
+The tool requires read-only permissions for various AWS services. Here's a comprehensive IAM policy that covers all 199 assessments:
 
 ```json
 {
@@ -113,6 +116,8 @@ The tool requires read-only permissions for various AWS services. Here's a compr
         {
             "Effect": "Allow",
             "Action": [
+                "access-analyzer:Get*",
+                "access-analyzer:List*",
                 "acm:Describe*",
                 "acm:Get*",
                 "acm:List*",
@@ -122,19 +127,19 @@ The tool requires read-only permissions for various AWS services. Here's a compr
                 "backup:Describe*",
                 "backup:Get*",
                 "backup:List*",
+                "cloudfront:Get*",
+                "cloudfront:List*",
                 "cloudtrail:Describe*",
-                "cloudtrail:GetTrailStatus",
-                "cloudtrail:LookupEvents",
-                "cloudwatch:Describe*",
-                "cloudwatch:Get*",
-                "cloudwatch:List*",
+                "cloudtrail:Get*",
+                "cloudtrail:List*",
                 "codebuild:BatchGetProjects",
                 "codebuild:ListProjects",
+                "cognito-idp:Describe*",
+                "cognito-idp:Get*",
+                "cognito-idp:List*",
                 "config:Describe*",
                 "config:Get*",
                 "config:List*",
-                "dms:Describe*",
-                "dms:List*",
                 "dynamodb:Describe*",
                 "dynamodb:List*",
                 "ec2:Describe*",
@@ -151,30 +156,38 @@ The tool requires read-only permissions for various AWS services. Here's a compr
                 "elasticloadbalancing:Describe*",
                 "elasticmapreduce:Describe*",
                 "elasticmapreduce:List*",
-                "elasticmapreduce:ViewEventsFromAllClustersInConsole",
                 "es:Describe*",
-                "es:ESHttpGet",
                 "es:List*",
                 "guardduty:Get*",
                 "guardduty:List*",
                 "iam:Get*",
                 "iam:List*",
+                "inspector2:BatchGet*",
+                "inspector2:List*",
                 "kinesis:Describe*",
                 "kinesis:List*",
-                "kms:Describe*",
-                "kms:Get*",
-                "kms:List*",
                 "lambda:Get*",
                 "lambda:List*",
                 "logs:Describe*",
+                "macie2:Get*",
+                "macie2:List*",
+                "network-firewall:Describe*",
+                "network-firewall:List*",
+                "opensearch:Describe*",
+                "opensearch:List*",
                 "organizations:Describe*",
                 "organizations:List*",
                 "rds:Describe*",
                 "redshift:Describe*",
+                "route53:Get*",
+                "route53:List*",
+                "route53resolver:Get*",
+                "route53resolver:List*",
                 "s3:GetBucket*",
-                "s3:GetObject*",
-                "s3:ListBucket*",
                 "s3:GetAccountPublicAccessBlock",
+                "s3:GetEncryptionConfiguration",
+                "s3:ListBucket*",
+                "s3:ListAllMyBuckets",
                 "sagemaker:Describe*",
                 "sagemaker:List*",
                 "secretsmanager:Describe*",
@@ -186,12 +199,13 @@ The tool requires read-only permissions for various AWS services. Here's a compr
                 "sns:List*",
                 "sqs:Get*",
                 "sqs:List*",
+                "sso:Describe*",
+                "sso:Get*",
+                "sso:List*",
                 "ssm:Describe*",
                 "ssm:Get*",
                 "ssm:List*",
                 "sts:GetCallerIdentity",
-                "waf:Get*",
-                "waf:List*",
                 "wafv2:Get*",
                 "wafv2:List*"
             ],
@@ -205,33 +219,23 @@ The tool requires read-only permissions for various AWS services. Here's a compr
 
 This policy includes permissions for all AWS services assessed by the tool:
 
-**Core Services:** EC2, IAM, S3, RDS, CloudTrail, CloudWatch, Logs  
-**Security Services:** GuardDuty, Security Hub, WAF, KMS, Secrets Manager, ACM  
-**Container Services:** ECS, ECR, EKS (via EC2), Lambda  
-**Data Services:** DynamoDB, Redshift, ElastiCache, OpenSearch, Elasticsearch, Kinesis, SQS, SNS  
-**Compute Services:** Auto Scaling, Elastic Beanstalk, EMR, SageMaker  
-**Network Services:** ELB, ALB/NLB, API Gateway, VPC  
-**Storage Services:** EFS, S3 Control, Backup  
-**DevOps Services:** CodeBuild, DMS  
-**Management Services:** SSM, Organizations, Config, STS
+**Identity & Security:** IAM, SSO/Identity Center, IAM Access Analyzer, GuardDuty, Security Hub, Macie, Inspector, Secrets Manager, ACM, Cognito  
+**Compute:** EC2, Auto Scaling, ECS, ECR, Lambda, Elastic Beanstalk, EMR, SageMaker  
+**Storage:** S3, EFS, Backup  
+**Database:** RDS, DynamoDB, Redshift, ElastiCache, OpenSearch/Elasticsearch, Kinesis  
+**Networking:** VPC (via EC2), ELB/ALB/NLB, API Gateway, CloudFront, Route 53, Route 53 Resolver, Network Firewall, WAFv2  
+**Monitoring:** CloudTrail, CloudWatch Logs, Config  
+**Messaging:** SNS, SQS  
+**Management:** SSM, Organizations, STS  
+**DevOps:** CodeBuild
 
 ### Minimal Permissions for Testing
 
 For initial testing, you can use the AWS managed `ReadOnlyAccess` policy:
 
-```json
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ReadOnlyAccess"
-            ],
-            "Resource": "*"
-        }
-    ]
-}
+```bash
+# Attach ReadOnlyAccess to your IAM user/role
+aws iam attach-user-policy --user-name <user> --policy-arn arn:aws:iam::aws:policy/ReadOnlyAccess
 ```
 
 ## Verification
@@ -297,6 +301,12 @@ aws sts get-caller-identity
 
 # Validate with the tool
 aws-cis-assess validate-credentials --verbose
+
+# If using temporary credentials (recommended over permanent keys)
+export AWS_ACCESS_KEY_ID=your_access_key
+export AWS_SECRET_ACCESS_KEY=your_secret_key
+export AWS_SESSION_TOKEN=your_session_token
+export AWS_DEFAULT_REGION=us-east-1
 ```
 
 #### Network/Proxy Issues

@@ -1,17 +1,17 @@
 # Developer Guide
 
-This guide covers extending and customizing the AWS CIS Controls Compliance Assessment Framework - a production-ready, enterprise-grade solution with **175 total rules** (125 IG1 + 38 IG2 + 12 IG3).
+This guide covers extending and customizing the AWS CIS Controls Compliance Assessment Framework - a production-ready, enterprise-grade solution with **199 unique assessment rules** (122 IG1 + 75 IG2 + 13 IG3).
 
 ## Production Framework Status
 
 **✅ Enhanced CIS Controls v8.1 Coverage**
-- **125 IG1 rules** (75%+ coverage of CIS Controls v8.1 IG1 safeguards)
-- **38 IG2 rules** and **12 IG3 rules** for enhanced and advanced security
-- **50 new rules** added in v1.2.0 across 4 phases
+- **122 IG1 rules** across 24 CIS Controls v8.1 IG1 safeguards
+- **75 IG2 rules** across 12 controls for enhanced security
+- **13 IG3 rules** across 4 controls for advanced security
+- **199 unique assessment rules** total (some rules shared across IGs)
 - Production-tested architecture with comprehensive error handling
-- Enterprise-grade performance and scalability
+- Enterprise-grade performance with cross-IG result caching
 - Coverage metrics reporting for transparency
-- Ready for immediate deployment and customization
 
 ## Table of Contents
 
@@ -72,7 +72,7 @@ aws_cis_assessment/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/aws-cis-controls-assessment.git
+git clone https://github.com/rferroni/aws-cis-controls-assessment.git
 cd aws-cis-controls-assessment
 
 # Create virtual environment
@@ -1355,7 +1355,6 @@ class TestBackupPlanMinFrequencyAndMinRetentionCheckAssessment:
 
 For complete documentation on AWS Backup controls, see:
 - [AWS Backup Controls Implementation Guide](adding-aws-backup-controls.md)
-- [AWS Backup Controls Summary](../AWS_BACKUP_CONTROLS_IMPLEMENTATION_SUMMARY.md)
 
 ### Benefits of This Approach
 

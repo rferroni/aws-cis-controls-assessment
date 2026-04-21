@@ -91,10 +91,11 @@ NoCredentialsError: Unable to locate credentials
    aws configure
    ```
 
-2. **Set environment variables:**
+2. **Set environment variables (use temporary credentials):**
    ```bash
    export AWS_ACCESS_KEY_ID=your_access_key
    export AWS_SECRET_ACCESS_KEY=your_secret_key
+   export AWS_SESSION_TOKEN=your_session_token
    export AWS_DEFAULT_REGION=us-east-1
    ```
 
@@ -117,10 +118,8 @@ InvalidUserID.NotFound: The user ID does not exist
 
 **Solutions:**
 
-1. **Check user/role exists:**
+1. **Verify your identity:**
    ```bash
-   aws iam get-user
-   # or
    aws sts get-caller-identity
    ```
 
@@ -152,12 +151,6 @@ TokenRefreshError: The AWS Access Token has expired
 2. **Re-authenticate:**
    ```bash
    aws configure sso
-   ```
-
-3. **Use long-term credentials for automation:**
-   ```bash
-   # Create service account with access keys
-   aws iam create-access-key --user-name service-account
    ```
 
 ## IAM Permission Issues

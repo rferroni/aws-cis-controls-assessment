@@ -52,6 +52,38 @@ aws-cis-assess assess -p security-audit --implementation-groups IG1,IG2,IG3 --re
 aws-cis-assess assess --output-format json
 ```
 
+### Sample Output
+
+```
+🔧 Initializing assessment engine...
+✅ Validating configuration...
+📊 Assessment Summary:
+   Implementation Groups: IG1, IG2, IG3
+   Total Assessments: 199
+   Regions: us-east-1
+🚀 Starting compliance assessment...
+[████████████████████] 100.0% - Complete
+
+📈 Assessment Results:
+   Overall Compliance: 72.4%
+   IG1 Compliance: 78.3%
+   IG2 Compliance: 68.1%
+   IG3 Compliance: 65.7%
+   Total Resources: 1,247
+   Assessment Duration: 12m 34s
+
+📄 Generating reports...
+   ⏱️  Assessment Duration: 12m 34s
+   ✅ JSON report: reports/cis_assessment_20260421_143022.json
+   ✅ HTML report: reports/cis_assessment_20260421_143022.html
+   📋 Log file: reports/cis_assessment_20260421_143022.log
+✅ Assessment completed successfully!
+
+🎯 Final Result: 72.4% overall compliance
+```
+
+A sample HTML report is available in [`examples/sample-report.html`](examples/sample-report.html) and a JSON report in [`examples/sample-report.json`](examples/sample-report.json) — open the HTML in your browser to see the interactive report with filters and pagination.
+
 ## 📊 Implementation Groups Coverage
 
 ### Coverage Summary (Cumulative)

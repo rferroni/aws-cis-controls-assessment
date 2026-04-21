@@ -251,16 +251,19 @@ class ConfigRuleLoader:
                 continue
             
             # Filter by specific controls
-            if controls and control_id not in controls:
+            if controls and control.control_id not in controls:
                 continue
             
             filtered_controls[control_id] = control
         
-        # Calculate statistics
-        stats['total_controls'] = len(filtered_controls)
+        # Track unique control IDs and rule names across all IGs
+        unique_control_ids = set()
+        unique_rule_names = set()
         
+        # Calculate statistics
         for control_id, control in filtered_controls.items():
             ig = control.implementation_group
+            unique_control_ids.add(control.control_id)
             
             # Initialize IG stats if needed
             if ig not in stats['by_implementation_group']:
@@ -269,22 +272,27 @@ class ConfigRuleLoader:
                     'config_rules': 0
                 }
             
-            # Count controls and rules
+            # Count controls per IG
             stats['by_implementation_group'][ig]['controls'] += 1
-            stats['by_implementation_group'][ig]['config_rules'] += len(control.config_rules)
-            stats['total_config_rules'] += len(control.config_rules)
             
-            # Count by service and resource types
+            # Count unique rules per IG (deduplicate within each IG)
+            ig_rule_names = set()
             for rule in control.config_rules:
-                # Extract service from rule name (heuristic)
+                ig_rule_names.add(rule.name)
+                unique_rule_names.add(rule.name)
+                
+                # Count by service and resource types
                 service = self._extract_service_from_rule(rule.name)
                 if service:
                     stats['by_service'][service] = stats['by_service'].get(service, 0) + 1
-                
-                # Add resource types
                 stats['resource_types'].update(rule.resource_types)
+            
+            stats['by_implementation_group'][ig]['config_rules'] += len(ig_rule_names)
         
-        # Estimate total assessments (rules * regions)
+        stats['total_controls'] = len(unique_control_ids)
+        stats['total_config_rules'] = len(unique_rule_names)
+        
+        # Estimate total assessments (unique rules * regions)
         stats['estimated_assessments'] = stats['total_config_rules'] * len(regions)
         
         # Convert set to list for JSON serialization

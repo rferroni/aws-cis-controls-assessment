@@ -668,4 +668,3 @@ aws-cis-assess assess --controls 11.2
 
 For detailed information about AWS Backup controls, see:
 - [AWS Backup Controls Implementation Guide](adding-aws-backup-controls.md)
-- [AWS Backup Controls Summary](../AWS_BACKUP_CONTROLS_IMPLEMENTATION_SUMMARY.md)
