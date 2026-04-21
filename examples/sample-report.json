@@ -1,0 +1,1847 @@
+{
+  "assessment_statistics": {
+    "assessment_scope": {
+      "assessment_duration": "0:12:34",
+      "resources_per_minute": 0.0,
+      "resources_per_region": 69.0,
+      "total_resources_evaluated": 69
+    },
+    "control_distribution": {
+      "fully_compliant_controls": 2,
+      "mostly_compliant_controls": 3,
+      "non_compliant_controls": 1,
+      "partially_compliant_controls": 4,
+      "total_controls_evaluated": 10
+    },
+    "implementation_groups": {
+      "IG1": {
+        "compliance_percentage": 69.48135198135198,
+        "compliant_controls": 3,
+        "controls_at_risk": 3,
+        "total_controls": 6
+      },
+      "IG2": {
+        "compliance_percentage": 85.71428571428572,
+        "compliant_controls": 1,
+        "controls_at_risk": 1,
+        "total_controls": 2
+      },
+      "IG3": {
+        "compliance_percentage": 83.33333333333333,
+        "compliant_controls": 1,
+        "controls_at_risk": 1,
+        "total_controls": 2
+      }
+    },
+    "regional_coverage": {
+      "multi_region_assessment": false,
+      "regions_list": [
+        "us-east-1"
+      ],
+      "total_regions": 1
+    }
+  },
+  "data_quality": {
+    "completeness": {
+      "actual_igs": 3,
+      "expected_igs": 3,
+      "implementation_groups": 1.0
+    },
+    "consistency": {
+      "metadata_alignment": 1.0,
+      "resource_count_consistency": 1.0
+    },
+    "coverage": {
+      "regional_coverage_score": 0.3333333333333333,
+      "regions_assessed": 1
+    },
+    "data_freshness": {
+      "assessment_timestamp": "2026-04-21T10:24:56.887990",
+      "report_generation_timestamp": "2026-04-21T10:24:56.890444"
+    },
+    "overall_quality_score": 0.778
+  },
+  "detailed_findings": {
+    "IG1": {
+      "1.1": [
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "eip-attached",
+          "evaluation_reason": "Resource eipalloc-0a1b2c3d meets eip-attached requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "eipalloc-0a1b2c3d",
+          "resource_type": "AWS::EC2::EIP",
+          "timestamp": "2026-04-21T10:24:56.887866"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "eip-attached",
+          "evaluation_reason": "Resource eipalloc-0e5f6a7b meets eip-attached requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "eipalloc-0e5f6a7b",
+          "resource_type": "AWS::EC2::EIP",
+          "timestamp": "2026-04-21T10:24:56.887879"
+        },
+        {
+          "compliance_status": "NON_COMPLIANT",
+          "config_rule_name": "ec2-stopped-instance",
+          "evaluation_reason": "Non-compliant: i-0a1b2c3d4e5f60001 requires remediation for ec2-stopped-instance",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "i-0a1b2c3d4e5f60001",
+          "resource_type": "AWS::EC2::Instance",
+          "timestamp": "2026-04-21T10:24:56.887887"
+        },
+        {
+          "compliance_status": "NON_COMPLIANT",
+          "config_rule_name": "ec2-stopped-instance",
+          "evaluation_reason": "Non-compliant: i-0a1b2c3d4e5f60002 requires remediation for ec2-stopped-instance",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "i-0a1b2c3d4e5f60002",
+          "resource_type": "AWS::EC2::Instance",
+          "timestamp": "2026-04-21T10:24:56.887890"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "ec2-stopped-instance",
+          "evaluation_reason": "Resource i-0a1b2c3d4e5f60003 meets ec2-stopped-instance requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "i-0a1b2c3d4e5f60003",
+          "resource_type": "AWS::EC2::Instance",
+          "timestamp": "2026-04-21T10:24:56.887891"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "ec2-stopped-instance",
+          "evaluation_reason": "Resource i-0a1b2c3d4e5f60004 meets ec2-stopped-instance requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "i-0a1b2c3d4e5f60004",
+          "resource_type": "AWS::EC2::Instance",
+          "timestamp": "2026-04-21T10:24:56.887892"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "ec2-stopped-instance",
+          "evaluation_reason": "Resource i-0a1b2c3d4e5f60005 meets ec2-stopped-instance requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "i-0a1b2c3d4e5f60005",
+          "resource_type": "AWS::EC2::Instance",
+          "timestamp": "2026-04-21T10:24:56.887893"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "ec2-instance-managed-by-systems-manager",
+          "evaluation_reason": "Resource i-0a1b2c3d4e5f60001 meets ec2-instance-managed-by-systems-manager requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "i-0a1b2c3d4e5f60001",
+          "resource_type": "AWS::EC2::Instance",
+          "timestamp": "2026-04-21T10:24:56.887896"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "ec2-instance-managed-by-systems-manager",
+          "evaluation_reason": "Resource i-0a1b2c3d4e5f60002 meets ec2-instance-managed-by-systems-manager requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "i-0a1b2c3d4e5f60002",
+          "resource_type": "AWS::EC2::Instance",
+          "timestamp": "2026-04-21T10:24:56.887897"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "ec2-instance-managed-by-systems-manager",
+          "evaluation_reason": "Resource i-0a1b2c3d4e5f60003 meets ec2-instance-managed-by-systems-manager requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "i-0a1b2c3d4e5f60003",
+          "resource_type": "AWS::EC2::Instance",
+          "timestamp": "2026-04-21T10:24:56.887897"
+        },
+        {
+          "compliance_status": "NON_COMPLIANT",
+          "config_rule_name": "ec2-instance-managed-by-systems-manager",
+          "evaluation_reason": "Non-compliant: i-0a1b2c3d4e5f60004 requires remediation for ec2-instance-managed-by-systems-manager",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "i-0a1b2c3d4e5f60004",
+          "resource_type": "AWS::EC2::Instance",
+          "timestamp": "2026-04-21T10:24:56.887899"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "ec2-instance-managed-by-systems-manager",
+          "evaluation_reason": "Resource i-0a1b2c3d4e5f60005 meets ec2-instance-managed-by-systems-manager requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "i-0a1b2c3d4e5f60005",
+          "resource_type": "AWS::EC2::Instance",
+          "timestamp": "2026-04-21T10:24:56.887899"
+        }
+      ],
+      "11.2": [
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "db-instance-backup-enabled",
+          "evaluation_reason": "Resource prod-database-1 meets db-instance-backup-enabled requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "prod-database-1",
+          "resource_type": "AWS::RDS::DBInstance",
+          "timestamp": "2026-04-21T10:24:56.887950"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "db-instance-backup-enabled",
+          "evaluation_reason": "Resource analytics-db meets db-instance-backup-enabled requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "analytics-db",
+          "resource_type": "AWS::RDS::DBInstance",
+          "timestamp": "2026-04-21T10:24:56.887950"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "db-instance-backup-enabled",
+          "evaluation_reason": "Resource staging-db meets db-instance-backup-enabled requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "staging-db",
+          "resource_type": "AWS::RDS::DBInstance",
+          "timestamp": "2026-04-21T10:24:56.887951"
+        },
+        {
+          "compliance_status": "NON_COMPLIANT",
+          "config_rule_name": "dynamodb-pitr-enabled",
+          "evaluation_reason": "users-table: configuration does not comply with dynamodb-pitr-enabled",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "users-table",
+          "resource_type": "AWS::DynamoDB::Table",
+          "timestamp": "2026-04-21T10:24:56.887952"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "dynamodb-pitr-enabled",
+          "evaluation_reason": "Resource sessions-table meets dynamodb-pitr-enabled requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "sessions-table",
+          "resource_type": "AWS::DynamoDB::Table",
+          "timestamp": "2026-04-21T10:24:56.887953"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "dynamodb-pitr-enabled",
+          "evaluation_reason": "Resource audit-log-table meets dynamodb-pitr-enabled requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "audit-log-table",
+          "resource_type": "AWS::DynamoDB::Table",
+          "timestamp": "2026-04-21T10:24:56.887954"
+        }
+      ],
+      "3.11": [
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "ebs-encryption-by-default",
+          "evaluation_reason": "Resource vol-0a1b2c3d4e5f6001 meets ebs-encryption-by-default requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "vol-0a1b2c3d4e5f6001",
+          "resource_type": "AWS::EC2::Volume",
+          "timestamp": "2026-04-21T10:24:56.887924"
+        },
+        {
+          "compliance_status": "NON_COMPLIANT",
+          "config_rule_name": "ebs-encryption-by-default",
+          "evaluation_reason": "vol-0a1b2c3d4e5f6002: configuration does not comply with ebs-encryption-by-default",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "vol-0a1b2c3d4e5f6002",
+          "resource_type": "AWS::EC2::Volume",
+          "timestamp": "2026-04-21T10:24:56.887925"
+        },
+        {
+          "compliance_status": "NON_COMPLIANT",
+          "config_rule_name": "ebs-encryption-by-default",
+          "evaluation_reason": "Non-compliant: vol-0a1b2c3d4e5f6003 requires remediation for ebs-encryption-by-default",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "vol-0a1b2c3d4e5f6003",
+          "resource_type": "AWS::EC2::Volume",
+          "timestamp": "2026-04-21T10:24:56.887926"
+        },
+        {
+          "compliance_status": "NON_COMPLIANT",
+          "config_rule_name": "rds-storage-encrypted",
+          "evaluation_reason": "prod-database-1: configuration does not comply with rds-storage-encrypted",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "prod-database-1",
+          "resource_type": "AWS::RDS::DBInstance",
+          "timestamp": "2026-04-21T10:24:56.887928"
+        },
+        {
+          "compliance_status": "NON_COMPLIANT",
+          "config_rule_name": "rds-storage-encrypted",
+          "evaluation_reason": "Resource analytics-db does not meet rds-storage-encrypted requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "analytics-db",
+          "resource_type": "AWS::RDS::DBInstance",
+          "timestamp": "2026-04-21T10:24:56.887929"
+        },
+        {
+          "compliance_status": "NON_COMPLIANT",
+          "config_rule_name": "rds-storage-encrypted",
+          "evaluation_reason": "staging-db: configuration does not comply with rds-storage-encrypted",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "staging-db",
+          "resource_type": "AWS::RDS::DBInstance",
+          "timestamp": "2026-04-21T10:24:56.887930"
+        },
+        {
+          "compliance_status": "NON_COMPLIANT",
+          "config_rule_name": "s3-default-encryption-kms",
+          "evaluation_reason": "company-data-bucket: configuration does not comply with s3-default-encryption-kms",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "company-data-bucket",
+          "resource_type": "AWS::S3::Bucket",
+          "timestamp": "2026-04-21T10:24:56.887931"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "s3-default-encryption-kms",
+          "evaluation_reason": "Resource logs-archive-bucket meets s3-default-encryption-kms requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "logs-archive-bucket",
+          "resource_type": "AWS::S3::Bucket",
+          "timestamp": "2026-04-21T10:24:56.887932"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "s3-default-encryption-kms",
+          "evaluation_reason": "Resource static-assets-bucket meets s3-default-encryption-kms requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "static-assets-bucket",
+          "resource_type": "AWS::S3::Bucket",
+          "timestamp": "2026-04-21T10:24:56.887933"
+        },
+        {
+          "compliance_status": "NON_COMPLIANT",
+          "config_rule_name": "s3-default-encryption-kms",
+          "evaluation_reason": "Non-compliant: backup-bucket-prod requires remediation for s3-default-encryption-kms",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "backup-bucket-prod",
+          "resource_type": "AWS::S3::Bucket",
+          "timestamp": "2026-04-21T10:24:56.887933"
+        },
+        {
+          "compliance_status": "NON_COMPLIANT",
+          "config_rule_name": "s3-default-encryption-kms",
+          "evaluation_reason": "Non-compliant: config-bucket requires remediation for s3-default-encryption-kms",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "config-bucket",
+          "resource_type": "AWS::S3::Bucket",
+          "timestamp": "2026-04-21T10:24:56.887934"
+        }
+      ],
+      "3.3": [
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "s3-bucket-public-read-prohibited",
+          "evaluation_reason": "Resource company-data-bucket meets s3-bucket-public-read-prohibited requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "company-data-bucket",
+          "resource_type": "AWS::S3::Bucket",
+          "timestamp": "2026-04-21T10:24:56.887907"
+        },
+        {
+          "compliance_status": "NON_COMPLIANT",
+          "config_rule_name": "s3-bucket-public-read-prohibited",
+          "evaluation_reason": "Resource logs-archive-bucket does not meet s3-bucket-public-read-prohibited requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "logs-archive-bucket",
+          "resource_type": "AWS::S3::Bucket",
+          "timestamp": "2026-04-21T10:24:56.887909"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "s3-bucket-public-read-prohibited",
+          "evaluation_reason": "Resource static-assets-bucket meets s3-bucket-public-read-prohibited requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "static-assets-bucket",
+          "resource_type": "AWS::S3::Bucket",
+          "timestamp": "2026-04-21T10:24:56.887909"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "s3-bucket-public-read-prohibited",
+          "evaluation_reason": "Resource backup-bucket-prod meets s3-bucket-public-read-prohibited requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "backup-bucket-prod",
+          "resource_type": "AWS::S3::Bucket",
+          "timestamp": "2026-04-21T10:24:56.887911"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "s3-bucket-public-read-prohibited",
+          "evaluation_reason": "Resource config-bucket meets s3-bucket-public-read-prohibited requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "config-bucket",
+          "resource_type": "AWS::S3::Bucket",
+          "timestamp": "2026-04-21T10:24:56.887912"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "iam-policy-no-statements-with-admin-access",
+          "evaluation_reason": "Resource AdminPolicy meets iam-policy-no-statements-with-admin-access requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "AdminPolicy",
+          "resource_type": "AWS::IAM::Policy",
+          "timestamp": "2026-04-21T10:24:56.887914"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "iam-policy-no-statements-with-admin-access",
+          "evaluation_reason": "Resource DeveloperPolicy meets iam-policy-no-statements-with-admin-access requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "DeveloperPolicy",
+          "resource_type": "AWS::IAM::Policy",
+          "timestamp": "2026-04-21T10:24:56.887914"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "iam-policy-no-statements-with-admin-access",
+          "evaluation_reason": "Resource ReadOnlyPolicy meets iam-policy-no-statements-with-admin-access requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "ReadOnlyPolicy",
+          "resource_type": "AWS::IAM::Policy",
+          "timestamp": "2026-04-21T10:24:56.887915"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "ec2-instance-no-public-ip",
+          "evaluation_reason": "Resource i-0a1b2c3d4e5f60001 meets ec2-instance-no-public-ip requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "i-0a1b2c3d4e5f60001",
+          "resource_type": "AWS::EC2::Instance",
+          "timestamp": "2026-04-21T10:24:56.887916"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "ec2-instance-no-public-ip",
+          "evaluation_reason": "Resource i-0a1b2c3d4e5f60002 meets ec2-instance-no-public-ip requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "i-0a1b2c3d4e5f60002",
+          "resource_type": "AWS::EC2::Instance",
+          "timestamp": "2026-04-21T10:24:56.887917"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "ec2-instance-no-public-ip",
+          "evaluation_reason": "Resource i-0a1b2c3d4e5f60003 meets ec2-instance-no-public-ip requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "i-0a1b2c3d4e5f60003",
+          "resource_type": "AWS::EC2::Instance",
+          "timestamp": "2026-04-21T10:24:56.887917"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "ec2-instance-no-public-ip",
+          "evaluation_reason": "Resource i-0a1b2c3d4e5f60004 meets ec2-instance-no-public-ip requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "i-0a1b2c3d4e5f60004",
+          "resource_type": "AWS::EC2::Instance",
+          "timestamp": "2026-04-21T10:24:56.887918"
+        },
+        {
+          "compliance_status": "NON_COMPLIANT",
+          "config_rule_name": "ec2-instance-no-public-ip",
+          "evaluation_reason": "i-0a1b2c3d4e5f60005: configuration does not comply with ec2-instance-no-public-ip",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "i-0a1b2c3d4e5f60005",
+          "resource_type": "AWS::EC2::Instance",
+          "timestamp": "2026-04-21T10:24:56.887919"
+        }
+      ],
+      "4.1": [
+        {
+          "compliance_status": "NON_COMPLIANT",
+          "config_rule_name": "access-keys-rotated",
+          "evaluation_reason": "Non-compliant: admin-user requires remediation for access-keys-rotated",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "admin-user",
+          "resource_type": "AWS::IAM::User",
+          "timestamp": "2026-04-21T10:24:56.887938"
+        },
+        {
+          "compliance_status": "NON_COMPLIANT",
+          "config_rule_name": "access-keys-rotated",
+          "evaluation_reason": "Resource developer-1 does not meet access-keys-rotated requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "developer-1",
+          "resource_type": "AWS::IAM::User",
+          "timestamp": "2026-04-21T10:24:56.887939"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "access-keys-rotated",
+          "evaluation_reason": "Resource ci-service-account meets access-keys-rotated requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "ci-service-account",
+          "resource_type": "AWS::IAM::User",
+          "timestamp": "2026-04-21T10:24:56.887939"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "access-keys-rotated",
+          "evaluation_reason": "Resource analyst-user meets access-keys-rotated requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "analyst-user",
+          "resource_type": "AWS::IAM::User",
+          "timestamp": "2026-04-21T10:24:56.887940"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "secretsmanager-rotation-enabled-check",
+          "evaluation_reason": "Resource prod/database/password meets secretsmanager-rotation-enabled-check requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "prod/database/password",
+          "resource_type": "AWS::SecretsManager::Secret",
+          "timestamp": "2026-04-21T10:24:56.887941"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "secretsmanager-rotation-enabled-check",
+          "evaluation_reason": "Resource prod/api/key meets secretsmanager-rotation-enabled-check requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "prod/api/key",
+          "resource_type": "AWS::SecretsManager::Secret",
+          "timestamp": "2026-04-21T10:24:56.887942"
+        }
+      ],
+      "8.2": [
+        {
+          "compliance_status": "NON_COMPLIANT",
+          "config_rule_name": "cloudtrail-enabled",
+          "evaluation_reason": "Resource resource-0 does not meet cloudtrail-enabled requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "resource-0",
+          "resource_type": "AWS::::Account",
+          "timestamp": "2026-04-21T10:24:56.887944"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "cloudtrail-enabled",
+          "evaluation_reason": "Resource resource-1 meets cloudtrail-enabled requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "resource-1",
+          "resource_type": "AWS::::Account",
+          "timestamp": "2026-04-21T10:24:56.887945"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "cloudtrail-enabled",
+          "evaluation_reason": "Resource resource-2 meets cloudtrail-enabled requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "resource-2",
+          "resource_type": "AWS::::Account",
+          "timestamp": "2026-04-21T10:24:56.887946"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "vpc-flow-logs-enabled",
+          "evaluation_reason": "Resource vpc-0a1b2c3d meets vpc-flow-logs-enabled requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "vpc-0a1b2c3d",
+          "resource_type": "AWS::EC2::VPC",
+          "timestamp": "2026-04-21T10:24:56.887947"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "vpc-flow-logs-enabled",
+          "evaluation_reason": "Resource vpc-0e5f6a7b meets vpc-flow-logs-enabled requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "vpc-0e5f6a7b",
+          "resource_type": "AWS::EC2::VPC",
+          "timestamp": "2026-04-21T10:24:56.887948"
+        }
+      ]
+    },
+    "IG2": {
+      "3.10": [
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "alb-http-to-https-redirection-check",
+          "evaluation_reason": "Resource app-lb-prod meets alb-http-to-https-redirection-check requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "app-lb-prod",
+          "resource_type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+          "timestamp": "2026-04-21T10:24:56.887963"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "alb-http-to-https-redirection-check",
+          "evaluation_reason": "Resource api-lb-prod meets alb-http-to-https-redirection-check requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "api-lb-prod",
+          "resource_type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+          "timestamp": "2026-04-21T10:24:56.887964"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "elb-tls-https-listeners-only",
+          "evaluation_reason": "Resource classic-lb-legacy meets elb-tls-https-listeners-only requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "classic-lb-legacy",
+          "resource_type": "AWS::ElasticLoadBalancing::LoadBalancer",
+          "timestamp": "2026-04-21T10:24:56.887965"
+        }
+      ],
+      "5.2": [
+        {
+          "compliance_status": "NON_COMPLIANT",
+          "config_rule_name": "iam-password-policy",
+          "evaluation_reason": "Resource resource-0 does not meet iam-password-policy requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "resource-0",
+          "resource_type": "AWS::::Account",
+          "timestamp": "2026-04-21T10:24:56.887968"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "iam-password-policy",
+          "evaluation_reason": "Resource resource-1 meets iam-password-policy requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "resource-1",
+          "resource_type": "AWS::::Account",
+          "timestamp": "2026-04-21T10:24:56.887969"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "iam-password-policy",
+          "evaluation_reason": "Resource resource-2 meets iam-password-policy requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "resource-2",
+          "resource_type": "AWS::::Account",
+          "timestamp": "2026-04-21T10:24:56.887969"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "mfa-enabled-for-iam-console-access",
+          "evaluation_reason": "Resource admin-user meets mfa-enabled-for-iam-console-access requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "admin-user",
+          "resource_type": "AWS::IAM::User",
+          "timestamp": "2026-04-21T10:24:56.887970"
+        },
+        {
+          "compliance_status": "NON_COMPLIANT",
+          "config_rule_name": "mfa-enabled-for-iam-console-access",
+          "evaluation_reason": "Non-compliant: developer-1 requires remediation for mfa-enabled-for-iam-console-access",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "developer-1",
+          "resource_type": "AWS::IAM::User",
+          "timestamp": "2026-04-21T10:24:56.887971"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "mfa-enabled-for-iam-console-access",
+          "evaluation_reason": "Resource ci-service-account meets mfa-enabled-for-iam-console-access requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "ci-service-account",
+          "resource_type": "AWS::IAM::User",
+          "timestamp": "2026-04-21T10:24:56.887972"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "mfa-enabled-for-iam-console-access",
+          "evaluation_reason": "Resource analyst-user meets mfa-enabled-for-iam-console-access requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "analyst-user",
+          "resource_type": "AWS::IAM::User",
+          "timestamp": "2026-04-21T10:24:56.887973"
+        }
+      ]
+    },
+    "IG3": {
+      "12.8": [
+        {
+          "compliance_status": "NON_COMPLIANT",
+          "config_rule_name": "vpc-sg-open-only-to-authorized-ports",
+          "evaluation_reason": "Non-compliant: sg-web-servers requires remediation for vpc-sg-open-only-to-authorized-ports",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "sg-web-servers",
+          "resource_type": "AWS::EC2::SecurityGroup",
+          "timestamp": "2026-04-21T10:24:56.887978"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "vpc-sg-open-only-to-authorized-ports",
+          "evaluation_reason": "Resource sg-database meets vpc-sg-open-only-to-authorized-ports requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "sg-database",
+          "resource_type": "AWS::EC2::SecurityGroup",
+          "timestamp": "2026-04-21T10:24:56.887979"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "vpc-sg-open-only-to-authorized-ports",
+          "evaluation_reason": "Resource sg-admin-access meets vpc-sg-open-only-to-authorized-ports requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "sg-admin-access",
+          "resource_type": "AWS::EC2::SecurityGroup",
+          "timestamp": "2026-04-21T10:24:56.887980"
+        }
+      ],
+      "13.1": [
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "restricted-incoming-traffic",
+          "evaluation_reason": "Resource sg-web-servers meets restricted-incoming-traffic requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "sg-web-servers",
+          "resource_type": "AWS::EC2::SecurityGroup",
+          "timestamp": "2026-04-21T10:24:56.887982"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "restricted-incoming-traffic",
+          "evaluation_reason": "Resource sg-database meets restricted-incoming-traffic requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "sg-database",
+          "resource_type": "AWS::EC2::SecurityGroup",
+          "timestamp": "2026-04-21T10:24:56.887982"
+        },
+        {
+          "compliance_status": "COMPLIANT",
+          "config_rule_name": "restricted-incoming-traffic",
+          "evaluation_reason": "Resource sg-admin-access meets restricted-incoming-traffic requirements",
+          "region": "us-east-1",
+          "remediation_guidance": null,
+          "resource_id": "sg-admin-access",
+          "resource_type": "AWS::EC2::SecurityGroup",
+          "timestamp": "2026-04-21T10:24:56.887983"
+        }
+      ]
+    }
+  },
+  "executive_summary": {
+    "aws_config_style_score": 71.01449275362319,
+    "compliance_grade": "C",
+    "compliance_ratio": 0.7101449275362319,
+    "compliance_trend": null,
+    "compliant_resources": 49,
+    "coverage_metrics": {
+      "IG1": {
+        "coverage_percentage": 42.857142857142854,
+        "covered_safeguards": 24,
+        "implementation_group": "IG1",
+        "implemented_rules": 122,
+        "safeguard_details": {},
+        "total_safeguards": 56
+      },
+      "IG2": {
+        "coverage_percentage": 36.486486486486484,
+        "covered_safeguards": 27,
+        "implementation_group": "IG2",
+        "implemented_rules": 75,
+        "safeguard_details": {},
+        "total_safeguards": 74
+      },
+      "IG3": {
+        "coverage_percentage": 19.6,
+        "covered_safeguards": 30,
+        "implementation_group": "IG3",
+        "implemented_rules": 13,
+        "safeguard_details": {},
+        "total_safeguards": 153
+      }
+    },
+    "ig1_compliance_percentage": 69.48135198135198,
+    "ig2_compliance_percentage": 85.71428571428572,
+    "ig3_compliance_percentage": 83.33333333333333,
+    "non_compliance_ratio": 0.2898550724637681,
+    "non_compliant_resources": 20,
+    "overall_compliance_percentage": 79.509657009657,
+    "risk_level": "MEDIUM",
+    "score_difference": 8.495164256033817,
+    "top_risk_areas": [
+      "Data Access Control",
+      "Encryption at Rest",
+      "Network Security"
+    ],
+    "total_resources": 69
+  },
+  "implementation_groups": {
+    "IG1": {
+      "compliance_percentage": 69.48135198135198,
+      "compliance_status": "FAIR",
+      "compliant_controls": 3,
+      "controls": {
+        "1.1": {
+          "compliance_percentage": 75.0,
+          "compliance_status": "FAIR",
+          "compliant_findings": [
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "eip-attached",
+              "evaluation_reason": "Resource eipalloc-0a1b2c3d meets eip-attached requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "eipalloc-0a1b2c3d",
+              "resource_type": "AWS::EC2::EIP",
+              "timestamp": "2026-04-21T10:24:56.887866"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "eip-attached",
+              "evaluation_reason": "Resource eipalloc-0e5f6a7b meets eip-attached requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "eipalloc-0e5f6a7b",
+              "resource_type": "AWS::EC2::EIP",
+              "timestamp": "2026-04-21T10:24:56.887879"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "ec2-stopped-instance",
+              "evaluation_reason": "Resource i-0a1b2c3d4e5f60003 meets ec2-stopped-instance requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "i-0a1b2c3d4e5f60003",
+              "resource_type": "AWS::EC2::Instance",
+              "timestamp": "2026-04-21T10:24:56.887891"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "ec2-stopped-instance",
+              "evaluation_reason": "Resource i-0a1b2c3d4e5f60004 meets ec2-stopped-instance requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "i-0a1b2c3d4e5f60004",
+              "resource_type": "AWS::EC2::Instance",
+              "timestamp": "2026-04-21T10:24:56.887892"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "ec2-stopped-instance",
+              "evaluation_reason": "Resource i-0a1b2c3d4e5f60005 meets ec2-stopped-instance requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "i-0a1b2c3d4e5f60005",
+              "resource_type": "AWS::EC2::Instance",
+              "timestamp": "2026-04-21T10:24:56.887893"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "ec2-instance-managed-by-systems-manager",
+              "evaluation_reason": "Resource i-0a1b2c3d4e5f60001 meets ec2-instance-managed-by-systems-manager requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "i-0a1b2c3d4e5f60001",
+              "resource_type": "AWS::EC2::Instance",
+              "timestamp": "2026-04-21T10:24:56.887896"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "ec2-instance-managed-by-systems-manager",
+              "evaluation_reason": "Resource i-0a1b2c3d4e5f60002 meets ec2-instance-managed-by-systems-manager requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "i-0a1b2c3d4e5f60002",
+              "resource_type": "AWS::EC2::Instance",
+              "timestamp": "2026-04-21T10:24:56.887897"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "ec2-instance-managed-by-systems-manager",
+              "evaluation_reason": "Resource i-0a1b2c3d4e5f60003 meets ec2-instance-managed-by-systems-manager requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "i-0a1b2c3d4e5f60003",
+              "resource_type": "AWS::EC2::Instance",
+              "timestamp": "2026-04-21T10:24:56.887897"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "ec2-instance-managed-by-systems-manager",
+              "evaluation_reason": "Resource i-0a1b2c3d4e5f60005 meets ec2-instance-managed-by-systems-manager requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "i-0a1b2c3d4e5f60005",
+              "resource_type": "AWS::EC2::Instance",
+              "timestamp": "2026-04-21T10:24:56.887899"
+            }
+          ],
+          "compliant_resources": 9,
+          "config_rules_evaluated": [
+            "eip-attached",
+            "ec2-stopped-instance",
+            "ec2-instance-managed-by-systems-manager"
+          ],
+          "control_id": "1.1",
+          "findings_count": 12,
+          "findings_summary": {
+            "has_findings": true,
+            "severity_distribution": {
+              "HIGH": 0,
+              "LOW": 0,
+              "MEDIUM": 3
+            },
+            "total_non_compliant": 3
+          },
+          "implementation_group": "IG1",
+          "non_compliant_findings": [
+            {
+              "compliance_status": "NON_COMPLIANT",
+              "config_rule_name": "ec2-stopped-instance",
+              "evaluation_reason": "Non-compliant: i-0a1b2c3d4e5f60001 requires remediation for ec2-stopped-instance",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "i-0a1b2c3d4e5f60001",
+              "resource_type": "AWS::EC2::Instance",
+              "timestamp": "2026-04-21T10:24:56.887887"
+            },
+            {
+              "compliance_status": "NON_COMPLIANT",
+              "config_rule_name": "ec2-stopped-instance",
+              "evaluation_reason": "Non-compliant: i-0a1b2c3d4e5f60002 requires remediation for ec2-stopped-instance",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "i-0a1b2c3d4e5f60002",
+              "resource_type": "AWS::EC2::Instance",
+              "timestamp": "2026-04-21T10:24:56.887890"
+            },
+            {
+              "compliance_status": "NON_COMPLIANT",
+              "config_rule_name": "ec2-instance-managed-by-systems-manager",
+              "evaluation_reason": "Non-compliant: i-0a1b2c3d4e5f60004 requires remediation for ec2-instance-managed-by-systems-manager",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "i-0a1b2c3d4e5f60004",
+              "resource_type": "AWS::EC2::Instance",
+              "timestamp": "2026-04-21T10:24:56.887899"
+            }
+          ],
+          "risk_score": 3.125,
+          "title": "Establish and Maintain Detailed Enterprise Asset Inventory",
+          "total_resources": 12
+        },
+        "11.2": {
+          "compliance_percentage": 83.33333333333334,
+          "compliance_status": "GOOD",
+          "compliant_findings": [
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "db-instance-backup-enabled",
+              "evaluation_reason": "Resource prod-database-1 meets db-instance-backup-enabled requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "prod-database-1",
+              "resource_type": "AWS::RDS::DBInstance",
+              "timestamp": "2026-04-21T10:24:56.887950"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "db-instance-backup-enabled",
+              "evaluation_reason": "Resource analytics-db meets db-instance-backup-enabled requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "analytics-db",
+              "resource_type": "AWS::RDS::DBInstance",
+              "timestamp": "2026-04-21T10:24:56.887950"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "db-instance-backup-enabled",
+              "evaluation_reason": "Resource staging-db meets db-instance-backup-enabled requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "staging-db",
+              "resource_type": "AWS::RDS::DBInstance",
+              "timestamp": "2026-04-21T10:24:56.887951"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "dynamodb-pitr-enabled",
+              "evaluation_reason": "Resource sessions-table meets dynamodb-pitr-enabled requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "sessions-table",
+              "resource_type": "AWS::DynamoDB::Table",
+              "timestamp": "2026-04-21T10:24:56.887953"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "dynamodb-pitr-enabled",
+              "evaluation_reason": "Resource audit-log-table meets dynamodb-pitr-enabled requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "audit-log-table",
+              "resource_type": "AWS::DynamoDB::Table",
+              "timestamp": "2026-04-21T10:24:56.887954"
+            }
+          ],
+          "compliant_resources": 5,
+          "config_rules_evaluated": [
+            "db-instance-backup-enabled",
+            "dynamodb-pitr-enabled"
+          ],
+          "control_id": "11.2",
+          "findings_count": 6,
+          "findings_summary": {
+            "has_findings": true,
+            "severity_distribution": {
+              "HIGH": 0,
+              "LOW": 1,
+              "MEDIUM": 0
+            },
+            "total_non_compliant": 1
+          },
+          "implementation_group": "IG1",
+          "non_compliant_findings": [
+            {
+              "compliance_status": "NON_COMPLIANT",
+              "config_rule_name": "dynamodb-pitr-enabled",
+              "evaluation_reason": "users-table: configuration does not comply with dynamodb-pitr-enabled",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "users-table",
+              "resource_type": "AWS::DynamoDB::Table",
+              "timestamp": "2026-04-21T10:24:56.887952"
+            }
+          ],
+          "risk_score": 1.9444444444444433,
+          "title": "Automated Backups",
+          "total_resources": 6
+        },
+        "3.11": {
+          "compliance_percentage": 27.27272727272727,
+          "compliance_status": "CRITICAL",
+          "compliant_findings": [
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "ebs-encryption-by-default",
+              "evaluation_reason": "Resource vol-0a1b2c3d4e5f6001 meets ebs-encryption-by-default requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "vol-0a1b2c3d4e5f6001",
+              "resource_type": "AWS::EC2::Volume",
+              "timestamp": "2026-04-21T10:24:56.887924"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "s3-default-encryption-kms",
+              "evaluation_reason": "Resource logs-archive-bucket meets s3-default-encryption-kms requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "logs-archive-bucket",
+              "resource_type": "AWS::S3::Bucket",
+              "timestamp": "2026-04-21T10:24:56.887932"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "s3-default-encryption-kms",
+              "evaluation_reason": "Resource static-assets-bucket meets s3-default-encryption-kms requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "static-assets-bucket",
+              "resource_type": "AWS::S3::Bucket",
+              "timestamp": "2026-04-21T10:24:56.887933"
+            }
+          ],
+          "compliant_resources": 3,
+          "config_rules_evaluated": [
+            "ebs-encryption-by-default",
+            "rds-storage-encrypted",
+            "s3-default-encryption-kms"
+          ],
+          "control_id": "3.11",
+          "findings_count": 11,
+          "findings_summary": {
+            "has_findings": true,
+            "severity_distribution": {
+              "HIGH": 0,
+              "LOW": 0,
+              "MEDIUM": 8
+            },
+            "total_non_compliant": 8
+          },
+          "implementation_group": "IG1",
+          "non_compliant_findings": [
+            {
+              "compliance_status": "NON_COMPLIANT",
+              "config_rule_name": "ebs-encryption-by-default",
+              "evaluation_reason": "vol-0a1b2c3d4e5f6002: configuration does not comply with ebs-encryption-by-default",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "vol-0a1b2c3d4e5f6002",
+              "resource_type": "AWS::EC2::Volume",
+              "timestamp": "2026-04-21T10:24:56.887925"
+            },
+            {
+              "compliance_status": "NON_COMPLIANT",
+              "config_rule_name": "ebs-encryption-by-default",
+              "evaluation_reason": "Non-compliant: vol-0a1b2c3d4e5f6003 requires remediation for ebs-encryption-by-default",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "vol-0a1b2c3d4e5f6003",
+              "resource_type": "AWS::EC2::Volume",
+              "timestamp": "2026-04-21T10:24:56.887926"
+            },
+            {
+              "compliance_status": "NON_COMPLIANT",
+              "config_rule_name": "rds-storage-encrypted",
+              "evaluation_reason": "prod-database-1: configuration does not comply with rds-storage-encrypted",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "prod-database-1",
+              "resource_type": "AWS::RDS::DBInstance",
+              "timestamp": "2026-04-21T10:24:56.887928"
+            },
+            {
+              "compliance_status": "NON_COMPLIANT",
+              "config_rule_name": "rds-storage-encrypted",
+              "evaluation_reason": "Resource analytics-db does not meet rds-storage-encrypted requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "analytics-db",
+              "resource_type": "AWS::RDS::DBInstance",
+              "timestamp": "2026-04-21T10:24:56.887929"
+            },
+            {
+              "compliance_status": "NON_COMPLIANT",
+              "config_rule_name": "rds-storage-encrypted",
+              "evaluation_reason": "staging-db: configuration does not comply with rds-storage-encrypted",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "staging-db",
+              "resource_type": "AWS::RDS::DBInstance",
+              "timestamp": "2026-04-21T10:24:56.887930"
+            },
+            {
+              "compliance_status": "NON_COMPLIANT",
+              "config_rule_name": "s3-default-encryption-kms",
+              "evaluation_reason": "company-data-bucket: configuration does not comply with s3-default-encryption-kms",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "company-data-bucket",
+              "resource_type": "AWS::S3::Bucket",
+              "timestamp": "2026-04-21T10:24:56.887931"
+            },
+            {
+              "compliance_status": "NON_COMPLIANT",
+              "config_rule_name": "s3-default-encryption-kms",
+              "evaluation_reason": "Non-compliant: backup-bucket-prod requires remediation for s3-default-encryption-kms",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "backup-bucket-prod",
+              "resource_type": "AWS::S3::Bucket",
+              "timestamp": "2026-04-21T10:24:56.887933"
+            },
+            {
+              "compliance_status": "NON_COMPLIANT",
+              "config_rule_name": "s3-default-encryption-kms",
+              "evaluation_reason": "Non-compliant: config-bucket requires remediation for s3-default-encryption-kms",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "config-bucket",
+              "resource_type": "AWS::S3::Bucket",
+              "timestamp": "2026-04-21T10:24:56.887934"
+            }
+          ],
+          "risk_score": 10.0,
+          "title": "Encrypt Sensitive Data at Rest",
+          "total_resources": 11
+        },
+        "3.3": {
+          "compliance_percentage": 84.61538461538461,
+          "compliance_status": "GOOD",
+          "compliant_findings": [
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "s3-bucket-public-read-prohibited",
+              "evaluation_reason": "Resource company-data-bucket meets s3-bucket-public-read-prohibited requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "company-data-bucket",
+              "resource_type": "AWS::S3::Bucket",
+              "timestamp": "2026-04-21T10:24:56.887907"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "s3-bucket-public-read-prohibited",
+              "evaluation_reason": "Resource static-assets-bucket meets s3-bucket-public-read-prohibited requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "static-assets-bucket",
+              "resource_type": "AWS::S3::Bucket",
+              "timestamp": "2026-04-21T10:24:56.887909"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "s3-bucket-public-read-prohibited",
+              "evaluation_reason": "Resource backup-bucket-prod meets s3-bucket-public-read-prohibited requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "backup-bucket-prod",
+              "resource_type": "AWS::S3::Bucket",
+              "timestamp": "2026-04-21T10:24:56.887911"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "s3-bucket-public-read-prohibited",
+              "evaluation_reason": "Resource config-bucket meets s3-bucket-public-read-prohibited requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "config-bucket",
+              "resource_type": "AWS::S3::Bucket",
+              "timestamp": "2026-04-21T10:24:56.887912"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "iam-policy-no-statements-with-admin-access",
+              "evaluation_reason": "Resource AdminPolicy meets iam-policy-no-statements-with-admin-access requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "AdminPolicy",
+              "resource_type": "AWS::IAM::Policy",
+              "timestamp": "2026-04-21T10:24:56.887914"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "iam-policy-no-statements-with-admin-access",
+              "evaluation_reason": "Resource DeveloperPolicy meets iam-policy-no-statements-with-admin-access requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "DeveloperPolicy",
+              "resource_type": "AWS::IAM::Policy",
+              "timestamp": "2026-04-21T10:24:56.887914"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "iam-policy-no-statements-with-admin-access",
+              "evaluation_reason": "Resource ReadOnlyPolicy meets iam-policy-no-statements-with-admin-access requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "ReadOnlyPolicy",
+              "resource_type": "AWS::IAM::Policy",
+              "timestamp": "2026-04-21T10:24:56.887915"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "ec2-instance-no-public-ip",
+              "evaluation_reason": "Resource i-0a1b2c3d4e5f60001 meets ec2-instance-no-public-ip requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "i-0a1b2c3d4e5f60001",
+              "resource_type": "AWS::EC2::Instance",
+              "timestamp": "2026-04-21T10:24:56.887916"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "ec2-instance-no-public-ip",
+              "evaluation_reason": "Resource i-0a1b2c3d4e5f60002 meets ec2-instance-no-public-ip requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "i-0a1b2c3d4e5f60002",
+              "resource_type": "AWS::EC2::Instance",
+              "timestamp": "2026-04-21T10:24:56.887917"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "ec2-instance-no-public-ip",
+              "evaluation_reason": "Resource i-0a1b2c3d4e5f60003 meets ec2-instance-no-public-ip requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "i-0a1b2c3d4e5f60003",
+              "resource_type": "AWS::EC2::Instance",
+              "timestamp": "2026-04-21T10:24:56.887917"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "ec2-instance-no-public-ip",
+              "evaluation_reason": "Resource i-0a1b2c3d4e5f60004 meets ec2-instance-no-public-ip requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "i-0a1b2c3d4e5f60004",
+              "resource_type": "AWS::EC2::Instance",
+              "timestamp": "2026-04-21T10:24:56.887918"
+            }
+          ],
+          "compliant_resources": 11,
+          "config_rules_evaluated": [
+            "s3-bucket-public-read-prohibited",
+            "iam-policy-no-statements-with-admin-access",
+            "ec2-instance-no-public-ip"
+          ],
+          "control_id": "3.3",
+          "findings_count": 13,
+          "findings_summary": {
+            "has_findings": true,
+            "severity_distribution": {
+              "HIGH": 0,
+              "LOW": 0,
+              "MEDIUM": 2
+            },
+            "total_non_compliant": 2
+          },
+          "implementation_group": "IG1",
+          "non_compliant_findings": [
+            {
+              "compliance_status": "NON_COMPLIANT",
+              "config_rule_name": "s3-bucket-public-read-prohibited",
+              "evaluation_reason": "Resource logs-archive-bucket does not meet s3-bucket-public-read-prohibited requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "logs-archive-bucket",
+              "resource_type": "AWS::S3::Bucket",
+              "timestamp": "2026-04-21T10:24:56.887909"
+            },
+            {
+              "compliance_status": "NON_COMPLIANT",
+              "config_rule_name": "ec2-instance-no-public-ip",
+              "evaluation_reason": "i-0a1b2c3d4e5f60005: configuration does not comply with ec2-instance-no-public-ip",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "i-0a1b2c3d4e5f60005",
+              "resource_type": "AWS::EC2::Instance",
+              "timestamp": "2026-04-21T10:24:56.887919"
+            }
+          ],
+          "risk_score": 1.775147928994083,
+          "title": "Configure Data Access Control Lists",
+          "total_resources": 13
+        },
+        "4.1": {
+          "compliance_percentage": 66.66666666666666,
+          "compliance_status": "FAIR",
+          "compliant_findings": [
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "access-keys-rotated",
+              "evaluation_reason": "Resource ci-service-account meets access-keys-rotated requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "ci-service-account",
+              "resource_type": "AWS::IAM::User",
+              "timestamp": "2026-04-21T10:24:56.887939"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "access-keys-rotated",
+              "evaluation_reason": "Resource analyst-user meets access-keys-rotated requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "analyst-user",
+              "resource_type": "AWS::IAM::User",
+              "timestamp": "2026-04-21T10:24:56.887940"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "secretsmanager-rotation-enabled-check",
+              "evaluation_reason": "Resource prod/database/password meets secretsmanager-rotation-enabled-check requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "prod/database/password",
+              "resource_type": "AWS::SecretsManager::Secret",
+              "timestamp": "2026-04-21T10:24:56.887941"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "secretsmanager-rotation-enabled-check",
+              "evaluation_reason": "Resource prod/api/key meets secretsmanager-rotation-enabled-check requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "prod/api/key",
+              "resource_type": "AWS::SecretsManager::Secret",
+              "timestamp": "2026-04-21T10:24:56.887942"
+            }
+          ],
+          "compliant_resources": 4,
+          "config_rules_evaluated": [
+            "access-keys-rotated",
+            "secretsmanager-rotation-enabled-check"
+          ],
+          "control_id": "4.1",
+          "findings_count": 6,
+          "findings_summary": {
+            "has_findings": true,
+            "severity_distribution": {
+              "HIGH": 2,
+              "LOW": 0,
+              "MEDIUM": 0
+            },
+            "total_non_compliant": 2
+          },
+          "implementation_group": "IG1",
+          "non_compliant_findings": [
+            {
+              "compliance_status": "NON_COMPLIANT",
+              "config_rule_name": "access-keys-rotated",
+              "evaluation_reason": "Non-compliant: admin-user requires remediation for access-keys-rotated",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "admin-user",
+              "resource_type": "AWS::IAM::User",
+              "timestamp": "2026-04-21T10:24:56.887938"
+            },
+            {
+              "compliance_status": "NON_COMPLIANT",
+              "config_rule_name": "access-keys-rotated",
+              "evaluation_reason": "Resource developer-1 does not meet access-keys-rotated requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "developer-1",
+              "resource_type": "AWS::IAM::User",
+              "timestamp": "2026-04-21T10:24:56.887939"
+            }
+          ],
+          "risk_score": 4.4444444444444455,
+          "title": "Establish and Maintain a Secure Configuration Process",
+          "total_resources": 6
+        },
+        "8.2": {
+          "compliance_percentage": 80.0,
+          "compliance_status": "GOOD",
+          "compliant_findings": [
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "cloudtrail-enabled",
+              "evaluation_reason": "Resource resource-1 meets cloudtrail-enabled requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "resource-1",
+              "resource_type": "AWS::::Account",
+              "timestamp": "2026-04-21T10:24:56.887945"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "cloudtrail-enabled",
+              "evaluation_reason": "Resource resource-2 meets cloudtrail-enabled requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "resource-2",
+              "resource_type": "AWS::::Account",
+              "timestamp": "2026-04-21T10:24:56.887946"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "vpc-flow-logs-enabled",
+              "evaluation_reason": "Resource vpc-0a1b2c3d meets vpc-flow-logs-enabled requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "vpc-0a1b2c3d",
+              "resource_type": "AWS::EC2::VPC",
+              "timestamp": "2026-04-21T10:24:56.887947"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "vpc-flow-logs-enabled",
+              "evaluation_reason": "Resource vpc-0e5f6a7b meets vpc-flow-logs-enabled requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "vpc-0e5f6a7b",
+              "resource_type": "AWS::EC2::VPC",
+              "timestamp": "2026-04-21T10:24:56.887948"
+            }
+          ],
+          "compliant_resources": 4,
+          "config_rules_evaluated": [
+            "cloudtrail-enabled",
+            "vpc-flow-logs-enabled"
+          ],
+          "control_id": "8.2",
+          "findings_count": 5,
+          "findings_summary": {
+            "has_findings": true,
+            "severity_distribution": {
+              "HIGH": 0,
+              "LOW": 1,
+              "MEDIUM": 0
+            },
+            "total_non_compliant": 1
+          },
+          "implementation_group": "IG1",
+          "non_compliant_findings": [
+            {
+              "compliance_status": "NON_COMPLIANT",
+              "config_rule_name": "cloudtrail-enabled",
+              "evaluation_reason": "Resource resource-0 does not meet cloudtrail-enabled requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "resource-0",
+              "resource_type": "AWS::::Account",
+              "timestamp": "2026-04-21T10:24:56.887944"
+            }
+          ],
+          "risk_score": 2.4,
+          "title": "Collect Audit Logs",
+          "total_resources": 5
+        }
+      },
+      "controls_compliance_ratio": 0.5,
+      "implementation_group": "IG1",
+      "total_controls": 6
+    },
+    "IG2": {
+      "compliance_percentage": 85.71428571428572,
+      "compliance_status": "GOOD",
+      "compliant_controls": 1,
+      "controls": {
+        "3.10": {
+          "compliance_percentage": 100.0,
+          "compliance_status": "EXCELLENT",
+          "compliant_findings": [
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "alb-http-to-https-redirection-check",
+              "evaluation_reason": "Resource app-lb-prod meets alb-http-to-https-redirection-check requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "app-lb-prod",
+              "resource_type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+              "timestamp": "2026-04-21T10:24:56.887963"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "alb-http-to-https-redirection-check",
+              "evaluation_reason": "Resource api-lb-prod meets alb-http-to-https-redirection-check requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "api-lb-prod",
+              "resource_type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+              "timestamp": "2026-04-21T10:24:56.887964"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "elb-tls-https-listeners-only",
+              "evaluation_reason": "Resource classic-lb-legacy meets elb-tls-https-listeners-only requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "classic-lb-legacy",
+              "resource_type": "AWS::ElasticLoadBalancing::LoadBalancer",
+              "timestamp": "2026-04-21T10:24:56.887965"
+            }
+          ],
+          "compliant_resources": 3,
+          "config_rules_evaluated": [
+            "alb-http-to-https-redirection-check",
+            "elb-tls-https-listeners-only"
+          ],
+          "control_id": "3.10",
+          "findings_count": 3,
+          "findings_summary": {
+            "has_findings": false,
+            "severity_distribution": {
+              "HIGH": 0,
+              "LOW": 0,
+              "MEDIUM": 0
+            },
+            "total_non_compliant": 0
+          },
+          "implementation_group": "IG2",
+          "non_compliant_findings": [],
+          "risk_score": 0.0,
+          "title": "Encrypt Sensitive Data in Transit",
+          "total_resources": 3
+        },
+        "5.2": {
+          "compliance_percentage": 71.42857142857143,
+          "compliance_status": "FAIR",
+          "compliant_findings": [
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "iam-password-policy",
+              "evaluation_reason": "Resource resource-1 meets iam-password-policy requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "resource-1",
+              "resource_type": "AWS::::Account",
+              "timestamp": "2026-04-21T10:24:56.887969"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "iam-password-policy",
+              "evaluation_reason": "Resource resource-2 meets iam-password-policy requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "resource-2",
+              "resource_type": "AWS::::Account",
+              "timestamp": "2026-04-21T10:24:56.887969"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "mfa-enabled-for-iam-console-access",
+              "evaluation_reason": "Resource admin-user meets mfa-enabled-for-iam-console-access requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "admin-user",
+              "resource_type": "AWS::IAM::User",
+              "timestamp": "2026-04-21T10:24:56.887970"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "mfa-enabled-for-iam-console-access",
+              "evaluation_reason": "Resource ci-service-account meets mfa-enabled-for-iam-console-access requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "ci-service-account",
+              "resource_type": "AWS::IAM::User",
+              "timestamp": "2026-04-21T10:24:56.887972"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "mfa-enabled-for-iam-console-access",
+              "evaluation_reason": "Resource analyst-user meets mfa-enabled-for-iam-console-access requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "analyst-user",
+              "resource_type": "AWS::IAM::User",
+              "timestamp": "2026-04-21T10:24:56.887973"
+            }
+          ],
+          "compliant_resources": 5,
+          "config_rules_evaluated": [
+            "iam-password-policy",
+            "mfa-enabled-for-iam-console-access"
+          ],
+          "control_id": "5.2",
+          "findings_count": 7,
+          "findings_summary": {
+            "has_findings": true,
+            "severity_distribution": {
+              "HIGH": 1,
+              "LOW": 1,
+              "MEDIUM": 0
+            },
+            "total_non_compliant": 2
+          },
+          "implementation_group": "IG2",
+          "non_compliant_findings": [
+            {
+              "compliance_status": "NON_COMPLIANT",
+              "config_rule_name": "iam-password-policy",
+              "evaluation_reason": "Resource resource-0 does not meet iam-password-policy requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "resource-0",
+              "resource_type": "AWS::::Account",
+              "timestamp": "2026-04-21T10:24:56.887968"
+            },
+            {
+              "compliance_status": "NON_COMPLIANT",
+              "config_rule_name": "mfa-enabled-for-iam-console-access",
+              "evaluation_reason": "Non-compliant: developer-1 requires remediation for mfa-enabled-for-iam-console-access",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "developer-1",
+              "resource_type": "AWS::IAM::User",
+              "timestamp": "2026-04-21T10:24:56.887971"
+            }
+          ],
+          "risk_score": 3.6734693877551012,
+          "title": "Use Unique Passwords",
+          "total_resources": 7
+        }
+      },
+      "controls_compliance_ratio": 0.5,
+      "implementation_group": "IG2",
+      "total_controls": 2
+    },
+    "IG3": {
+      "compliance_percentage": 83.33333333333333,
+      "compliance_status": "GOOD",
+      "compliant_controls": 1,
+      "controls": {
+        "12.8": {
+          "compliance_percentage": 66.66666666666666,
+          "compliance_status": "FAIR",
+          "compliant_findings": [
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "vpc-sg-open-only-to-authorized-ports",
+              "evaluation_reason": "Resource sg-database meets vpc-sg-open-only-to-authorized-ports requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "sg-database",
+              "resource_type": "AWS::EC2::SecurityGroup",
+              "timestamp": "2026-04-21T10:24:56.887979"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "vpc-sg-open-only-to-authorized-ports",
+              "evaluation_reason": "Resource sg-admin-access meets vpc-sg-open-only-to-authorized-ports requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "sg-admin-access",
+              "resource_type": "AWS::EC2::SecurityGroup",
+              "timestamp": "2026-04-21T10:24:56.887980"
+            }
+          ],
+          "compliant_resources": 2,
+          "config_rules_evaluated": [
+            "vpc-sg-open-only-to-authorized-ports"
+          ],
+          "control_id": "12.8",
+          "findings_count": 3,
+          "findings_summary": {
+            "has_findings": true,
+            "severity_distribution": {
+              "HIGH": 1,
+              "LOW": 0,
+              "MEDIUM": 0
+            },
+            "total_non_compliant": 1
+          },
+          "implementation_group": "IG3",
+          "non_compliant_findings": [
+            {
+              "compliance_status": "NON_COMPLIANT",
+              "config_rule_name": "vpc-sg-open-only-to-authorized-ports",
+              "evaluation_reason": "Non-compliant: sg-web-servers requires remediation for vpc-sg-open-only-to-authorized-ports",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "sg-web-servers",
+              "resource_type": "AWS::EC2::SecurityGroup",
+              "timestamp": "2026-04-21T10:24:56.887978"
+            }
+          ],
+          "risk_score": 4.4444444444444455,
+          "title": "Establish and Maintain Dedicated Computing Resources",
+          "total_resources": 3
+        },
+        "13.1": {
+          "compliance_percentage": 100.0,
+          "compliance_status": "EXCELLENT",
+          "compliant_findings": [
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "restricted-incoming-traffic",
+              "evaluation_reason": "Resource sg-web-servers meets restricted-incoming-traffic requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "sg-web-servers",
+              "resource_type": "AWS::EC2::SecurityGroup",
+              "timestamp": "2026-04-21T10:24:56.887982"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "restricted-incoming-traffic",
+              "evaluation_reason": "Resource sg-database meets restricted-incoming-traffic requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "sg-database",
+              "resource_type": "AWS::EC2::SecurityGroup",
+              "timestamp": "2026-04-21T10:24:56.887982"
+            },
+            {
+              "compliance_status": "COMPLIANT",
+              "config_rule_name": "restricted-incoming-traffic",
+              "evaluation_reason": "Resource sg-admin-access meets restricted-incoming-traffic requirements",
+              "region": "us-east-1",
+              "remediation_guidance": null,
+              "resource_id": "sg-admin-access",
+              "resource_type": "AWS::EC2::SecurityGroup",
+              "timestamp": "2026-04-21T10:24:56.887983"
+            }
+          ],
+          "compliant_resources": 3,
+          "config_rules_evaluated": [
+            "restricted-incoming-traffic"
+          ],
+          "control_id": "13.1",
+          "findings_count": 3,
+          "findings_summary": {
+            "has_findings": false,
+            "severity_distribution": {
+              "HIGH": 0,
+              "LOW": 0,
+              "MEDIUM": 0
+            },
+            "total_non_compliant": 0
+          },
+          "implementation_group": "IG3",
+          "non_compliant_findings": [],
+          "risk_score": 0.0,
+          "title": "Centralize Security Event Alerting",
+          "total_resources": 3
+        }
+      },
+      "controls_compliance_ratio": 0.5,
+      "implementation_group": "IG3",
+      "total_controls": 2
+    }
+  },
+  "metadata": {
+    "account_id": "123456789012",
+    "api_version": "v1",
+    "assessment_duration": "0:12:34",
+    "assessment_timestamp": "2026-04-21T10:24:56.887990",
+    "machine_readable": true,
+    "regions_assessed": [
+      "us-east-1"
+    ],
+    "report_format": "json",
+    "report_generated_at": "2026-04-21T10:24:56.890444",
+    "total_resources_evaluated": 69
+  },
+  "remediation_priorities": [],
+  "report_format": "json",
+  "report_version": "1.0",
+  "schema_version": "2024.1"
+}

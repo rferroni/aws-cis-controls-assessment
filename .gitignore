@@ -129,9 +129,7 @@ dmypy.json
 
 # Assessment reports
 reports/
-*.html
 *.csv
-*.json
 
 # IDE files
 .vscode/
@@ -168,6 +166,7 @@ comprehensive_*.py
 identify_*.py
 convert_*.py
 cis_assessment_*.json
+cis_assessment_*.html
 report*.html
 files-to-push.txt
 *.backup
