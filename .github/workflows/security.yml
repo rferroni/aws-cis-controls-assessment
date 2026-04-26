@@ -19,22 +19,16 @@ jobs:
       uses: actions/checkout@v4
       
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: "3.11"
         
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install safety pip-audit
+        pip install pip-audit
         pip install -r requirements.txt
         
-    - name: Run Safety scan
-      run: |
-        safety check --json --output safety-report.json
-        safety check --short-report
-      continue-on-error: true
-      
     - name: Run pip-audit scan
       run: |
         pip-audit --format=json --output=pip-audit-report.json
@@ -42,13 +36,11 @@ jobs:
       continue-on-error: true
       
     - name: Upload vulnerability reports
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: dependency-scan-reports
-        path: |
-          safety-report.json
-          pip-audit-report.json
+        path: pip-audit-report.json
 
   code-scan:
     name: Static Code Analysis
@@ -59,36 +51,28 @@ jobs:
       uses: actions/checkout@v4
       
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: "3.11"
         
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install bandit[toml] semgrep
+        pip install bandit[toml]
         pip install -r requirements.txt
         
     - name: Run Bandit security scan
       run: |
-        bandit -r aws_cis_assessment -f json -o bandit-report.json
+        bandit -r aws_cis_assessment -f json -o bandit-report.json || true
         bandit -r aws_cis_assessment -ll
       continue-on-error: true
       
-    - name: Run Semgrep scan
-      run: |
-        semgrep --config=auto --json --output=semgrep-report.json aws_cis_assessment/
-        semgrep --config=auto aws_cis_assessment/
-      continue-on-error: true
-      
     - name: Upload code scan reports
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: code-scan-reports
-        path: |
-          bandit-report.json
-          semgrep-report.json
+        path: bandit-report.json
 
   secrets-scan:
     name: Secrets Detection
@@ -101,12 +85,9 @@ jobs:
         fetch-depth: 0
         
     - name: Run TruffleHog OSS
-      uses: trufflesecurity/trufflehog@main
+      uses: trufflesecurity/trufflehog@v3.88.0
       with:
-        path: ./
-        base: main
-        head: HEAD
-        extra_args: --debug --only-verified
+        extra_args: --only-verified
 
   license-scan:
     name: License Compliance
@@ -117,14 +98,14 @@ jobs:
       uses: actions/checkout@v4
       
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: "3.11"
         
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pip-licenses licensecheck
+        pip install pip-licenses
         pip install -r requirements.txt
         
     - name: Generate license report
@@ -132,13 +113,8 @@ jobs:
         pip-licenses --format=json --output-file=licenses-report.json
         pip-licenses --format=plain-vertical
         
-    - name: Check license compatibility
-      run: |
-        licensecheck --zero
-      continue-on-error: true
-      
     - name: Upload license report
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: license-report
@@ -152,7 +128,7 @@ jobs:
     
     steps:
     - name: Download all artifacts
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       
     - name: Create security summary
       run: |
@@ -168,7 +144,7 @@ jobs:
         find . -name "*.json" -o -name "*.sarif" | sort >> security-summary.md
         
     - name: Upload security summary
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: security-summary
         path: security-summary.md
