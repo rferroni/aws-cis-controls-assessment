@@ -36,7 +36,7 @@ jobs:
       continue-on-error: true
       
     - name: Upload vulnerability reports
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       if: always()
       with:
         name: dependency-scan-reports
@@ -68,7 +68,7 @@ jobs:
       continue-on-error: true
       
     - name: Upload code scan reports
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       if: always()
       with:
         name: code-scan-reports
@@ -114,7 +114,7 @@ jobs:
         pip-licenses --format=plain-vertical
         
     - name: Upload license report
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       if: always()
       with:
         name: license-report
@@ -144,7 +144,7 @@ jobs:
         find . -name "*.json" -o -name "*.sarif" | sort >> security-summary.md
         
     - name: Upload security summary
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: security-summary
         path: security-summary.md
